@@ -1,0 +1,30 @@
+{
+ "dataset": "camus",
+ "bench_source": "/Users/nsapoval/research/rl-net-opt/nni_ensemble/results/camus_bench.csv",
+ "gnn_run": {
+  "run": "gnn_cpu_v1/runs/C4537CLFY0_t1_l2mix_pair_relaxedL2",
+  "host": "C4537CLFY0",
+  "jobs": 1
+ },
+ "calib": {
+  "pool": "sim",
+  "seconds": 2.6,
+  "cells": 138,
+  "per_cell": 0.01884057971014493
+ },
+ "addon_wall_inflation_vs_jobs1": null,
+ "stats": {
+  "r3_ok": 80,
+  "addon_clean": 80,
+  "r4_BROOQS_ok": 71,
+  "r4_NetCS_diff": 23,
+  "r4_NetCS_ok": 57,
+  "r4_BROOQS_diff": 9,
+  "rows": 320,
+  "cells": 80
+ },
+ "problems": [],
+ "warnings": [],
+ "n_warnings": 0,
+ "built": "2026-10-21T10:25:04-0500"
+}

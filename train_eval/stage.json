@@ -1,0 +1,60 @@
+{
+ "built": "2026-10-22 10:39:17",
+ "split": [
+  700,
+  800
+ ],
+ "n_loci": 1000,
+ "phases": {
+  "trn_x25": {
+   "source": "/Users/nsapoval/research/rl-net-opt/results/home/ns58/net-opt/results/x25",
+   "alisim": "/Users/nsapoval/research/rl-net-opt/alisim_gt_v1",
+   "train": 700,
+   "val": 100
+  },
+  "trn_x50": {
+   "source": "/Users/nsapoval/research/rl-net-opt/results/home/ns58/net-opt/results/x50",
+   "alisim": "/Users/nsapoval/research/rl-net-opt/alisim_gt_v1",
+   "train": 700,
+   "val": 100
+  },
+  "trn_y25": {
+   "source": "/Users/nsapoval/research/rl-net-opt/results/home/ns58/net-opt/results/y25",
+   "alisim": "/Users/nsapoval/research/rl-net-opt/alisim_gt_v2",
+   "train": 700,
+   "val": 100
+  },
+  "trn_y50": {
+   "source": "/Users/nsapoval/research/rl-net-opt/results/home/ns58/net-opt/results/y50",
+   "alisim": "/Users/nsapoval/research/rl-net-opt/alisim_gt_v2",
+   "train": 700,
+   "val": 100
+  },
+  "trn_l2t25": {
+   "source": "/Users/nsapoval/research/rl-net-opt/data/home/ns58/net-opt/data/l2reg_train_v1/l2t25",
+   "alisim": null,
+   "train": 700,
+   "val": 100
+  },
+  "trn_l2t50": {
+   "source": "/Users/nsapoval/research/rl-net-opt/data/home/ns58/net-opt/data/l2reg_train_v1/l2t50",
+   "alisim": null,
+   "train": 700,
+   "val": 100
+  }
+ },
+ "arms": {
+  "trn_true": "g_true.nwk.gz",
+  "trn_est_bp1000": "est_bp1000.nwk.gz"
+ },
+ "n_cells": 9600,
+ "n_tree_files": 9600,
+ "cells_sha256": "c304b2758894120766710a90e6189ecad96ad8b2befb6261e8f834cc5d86aae6",
+ "gates": [
+  "split",
+  "names",
+  "truth",
+  "trees"
+ ],
+ "problems": 0
+}

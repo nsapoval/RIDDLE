@@ -1,0 +1,126 @@
+{
+ "built": "2026-09-10 13:04",
+ "commit": "99c4031",
+ "src_opc_dirty": false,
+ "build_cpu": "Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz",
+ "cells": "cam25:cam_iq500,cam50:cam_g500,cam100:cam_g500,cam150:cam_g500,cam200:cam_g500",
+ "reps": "0-19",
+ "n_cells": 100,
+ "checkpoints": [
+  {
+   "tag": "_mix",
+   "seed": 0,
+   "epoch": 24,
+   "sha256": "7e85faa155aaff3342d2653c7fadf67a21449795e51f1d1acc810ff1c54d8cb9",
+   "phases": [
+    "x25",
+    "x50"
+   ],
+   "source": "results/rl/rl_run_gnn_segment_s0_mix/best.pt"
+  },
+  {
+   "tag": "_mix",
+   "seed": 1,
+   "epoch": 24,
+   "sha256": "f89d250e73d8d957cb9b7afd9e68ecb6335db755e874f9b3261e186bd9bc01da",
+   "phases": [
+    "x25",
+    "x50"
+   ],
+   "source": "results/rl/rl_run_gnn_segment_s1_mix/best.pt"
+  },
+  {
+   "tag": "_mix",
+   "seed": 2,
+   "epoch": 23,
+   "sha256": "714c00fa43a8a8a34445f6e354d75e51293ac11b21c033926915c55fc820a6e0",
+   "phases": [
+    "x25",
+    "x50"
+   ],
+   "source": "results/rl/rl_run_gnn_segment_s2_mix/best.pt"
+  },
+  {
+   "tag": "_mix2L",
+   "seed": 0,
+   "epoch": 48,
+   "sha256": "9f0918c9037fc0fab5b8fb53338aff244f92e43188d7bad5f2e20dc54d757cfa",
+   "phases": [
+    "x25",
+    "x50",
+    "y25",
+    "y50"
+   ],
+   "source": "results/rl/rl_run_gnn_segment_s0_mix2L/best.pt"
+  },
+  {
+   "tag": "_mix2L",
+   "seed": 1,
+   "epoch": 39,
+   "sha256": "94f520552e534e3a552ba9a49270045b7234fee88d140cfed872bee42ebcba3f",
+   "phases": [
+    "x25",
+    "x50",
+    "y25",
+    "y50"
+   ],
+   "source": "results/rl/rl_run_gnn_segment_s1_mix2L/best.pt"
+  },
+  {
+   "tag": "_mix2L",
+   "seed": 2,
+   "epoch": 34,
+   "sha256": "3891299f7f2e84dacc948f1f4e22755bfcc3de3f45ee5f10374d210799d52e42",
+   "phases": [
+    "x25",
+    "x50",
+    "y25",
+    "y50"
+   ],
+   "source": "results/rl/rl_run_gnn_segment_s2_mix2L/best.pt"
+  },
+  {
+   "tag": "_mix75",
+   "seed": 0,
+   "epoch": 39,
+   "sha256": "d34ff8ae087c262f1d755cc488d9090853f8caf31248f40c64e2088a16138dc1",
+   "phases": [
+    "x25",
+    "x50",
+    "x75"
+   ],
+   "source": "results/rl/rl_run_gnn_segment_s0_mix75/best.pt"
+  },
+  {
+   "tag": "_mix75",
+   "seed": 1,
+   "epoch": 42,
+   "sha256": "2464bc1b68f0f624066a4c220c62faf75dfe455e4e3cbd3fac91086a7dbaf89b",
+   "phases": [
+    "x25",
+    "x50",
+    "x75"
+   ],
+   "source": "results/rl/rl_run_gnn_segment_s1_mix75/best.pt"
+  },
+  {
+   "tag": "_mix75",
+   "seed": 2,
+   "epoch": 39,
+   "sha256": "06fc7b1173648afe38da5e27afa6404bbbf32d5d39434015675aaef6571db5bd",
+   "phases": [
+    "x25",
+    "x50",
+    "x75"
+   ],
+   "source": "results/rl/rl_run_gnn_segment_s2_mix75/best.pt"
+  }
+ ],
+ "versions": {
+  "numpy": "2.5.2",
+  "pyarrow": "25.0.0",
+  "scipy": "1.18.0",
+  "torch": "2.11.0+cu128"
+ },
+ "runner_sha256": "79f1e23b5a1009253055fd7c324e5a94373c0e1fdd3049599691f481b54d15cf"
+}

@@ -1,0 +1,174 @@
+{
+ "package": "alisim_gt_v1",
+ "built": "2026-09-04 10:15:00",
+ "built_from": {
+  "repo": "/home/ns58/net-opt",
+  "commit": "ab6824ae12051fb1c80c8f3f15ed78b27b487633",
+  "describe": "record the vacuity trap the prune created in f6_provenance"
+ },
+ "phases": [
+  "x25",
+  "x50",
+  "b25",
+  "b50",
+  "b100",
+  "b250"
+ ],
+ "splits": {
+  "x25": {
+   "train": 700,
+   "val": 800
+  },
+  "x50": {
+   "train": 700,
+   "val": 800
+  },
+  "b25": {
+   "train": 70,
+   "val": 80
+  },
+  "b50": {
+   "train": 70,
+   "val": 80
+  },
+  "b100": {
+   "train": 70,
+   "val": 80
+  },
+  "b250": {
+   "train": 70,
+   "val": 80
+  }
+ },
+ "n_cells": 2200,
+ "n_cells_requested": 1880,
+ "n_loci_per_cell": 1000,
+ "default_bp": 500,
+ "model": {
+  "branch_scale": 0.018,
+  "kappa": 2.0,
+  "base_freqs": "0.3,0.2,0.2,0.3",
+  "gamma_shape": 1.0,
+  "gamma_cats": 4,
+  "indel_ins": 0.03,
+  "indel_del": 0.03,
+  "indel_size": "POW{1.7/100}",
+  "outgroup_alpha": 0.5,
+  "inference_model": "HKY+F+G4",
+  "fast": true,
+  "keep_ident": true,
+  "theta": 0.036,
+  "sim_model": "HKY{2}+F{0.3,0.2,0.2,0.3}+G4{1}"
+ },
+ "vendored": [
+  "simulate/outgroup.py",
+  "simulate/phylip.py",
+  "simulate/seqsim.py"
+ ],
+ "seed_check": [
+  {
+   "phase": "x25",
+   "cell_key": "n25_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 500,
+   "master_seed": 20260901,
+   "seed_alisim": 1322103330,
+   "seed_iqtree": 159538578
+  },
+  {
+   "phase": "x25",
+   "cell_key": "n25_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 1000,
+   "master_seed": 20260901,
+   "seed_alisim": 1625936131,
+   "seed_iqtree": 296612263
+  },
+  {
+   "phase": "x50",
+   "cell_key": "n50_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 500,
+   "master_seed": 20260901,
+   "seed_alisim": 517047498,
+   "seed_iqtree": 1075742995
+  },
+  {
+   "phase": "x50",
+   "cell_key": "n50_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 1000,
+   "master_seed": 20260901,
+   "seed_alisim": 1278975447,
+   "seed_iqtree": 1527868166
+  },
+  {
+   "phase": "b25",
+   "cell_key": "n25_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 500,
+   "master_seed": 20260829,
+   "seed_alisim": 907395465,
+   "seed_iqtree": 1283591581
+  },
+  {
+   "phase": "b25",
+   "cell_key": "n25_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 1000,
+   "master_seed": 20260829,
+   "seed_alisim": 108523019,
+   "seed_iqtree": 888100761
+  },
+  {
+   "phase": "b50",
+   "cell_key": "n50_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 500,
+   "master_seed": 20260829,
+   "seed_alisim": 1385564558,
+   "seed_iqtree": 1380835090
+  },
+  {
+   "phase": "b50",
+   "cell_key": "n50_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 1000,
+   "master_seed": 20260829,
+   "seed_alisim": 1587973169,
+   "seed_iqtree": 1601926912
+  },
+  {
+   "phase": "b100",
+   "cell_key": "n100_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 500,
+   "master_seed": 20260829,
+   "seed_alisim": 1985660063,
+   "seed_iqtree": 463759493
+  },
+  {
+   "phase": "b100",
+   "cell_key": "n100_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 1000,
+   "master_seed": 20260829,
+   "seed_alisim": 2055826212,
+   "seed_iqtree": 495034784
+  },
+  {
+   "phase": "b250",
+   "cell_key": "n250_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 500,
+   "master_seed": 20260829,
+   "seed_alisim": 816995496,
+   "seed_iqtree": 435057460
+  },
+  {
+   "phase": "b250",
+   "cell_key": "n250_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 1000,
+   "master_seed": 20260829,
+   "seed_alisim": 1622957345,
+   "seed_iqtree": 571741713
+  }
+ ],
+ "cost_cpu_hours": {
+  "x25": 58.7,
+  "x50": 171.4,
+  "b25": 1.3,
+  "b50": 3.8,
+  "b100": 10.1,
+  "b250": 33.1
+ }
+}

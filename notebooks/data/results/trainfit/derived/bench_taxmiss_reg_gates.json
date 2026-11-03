@@ -1,0 +1,34 @@
+{
+ "variant": "z+tc",
+ "thr": 6.0,
+ "rho": 2,
+ "stats": {
+  "l2reg_tm_p0.90_c24": {
+   "ha_scored": 40,
+   "b1_cluster_f1": 20,
+   "b1_luay_norm_exact": 20,
+   "b1_ha_balanced_error": 20,
+   "b3_cells": 7,
+   "cells": 20
+  },
+  "l3reg_tm_p0.90_c24": {
+   "ha_scored": 40,
+   "b1_cluster_f1": 20,
+   "b1_luay_norm_exact": 20,
+   "b1_ha_balanced_error": 20,
+   "b3_cells": 7,
+   "cells": 20
+  }
+ },
+ "problems": [],
+ "sources": {
+  "l2reg_tm_p0.90_c24": {
+   "landed_csv": "taxmiss_eval/results/l2reg_taxmiss.csv",
+   "sha256": "d965057f9397160d468e7a3204a5be8df27545df9ea11e7b008b28eff2f61a82"
+  },
+  "l3reg_tm_p0.90_c24": {
+   "landed_csv": "taxmiss_eval/results/l3reg_taxmiss.csv",
+   "sha256": "2ee90d2373870e8c558cba6e62a1ad49e5077ccc09536d1482a3e7086cde4fe0"
+  }
+ }
+}

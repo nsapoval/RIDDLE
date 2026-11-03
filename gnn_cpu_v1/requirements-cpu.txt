@@ -1,0 +1,5 @@
+# the build machine's versions; torch from PyTorch's CPU index (local tag +cpu)
+numpy==2.5.2
+scipy==1.18.0
+pyarrow==25.0.0
+torch==2.11.0

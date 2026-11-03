@@ -1,0 +1,22 @@
+{
+ "variant": "z+tc",
+ "thr": 6.0,
+ "rho": 2,
+ "stats": {
+  "camus_tm_p0.90_c24": {
+   "ha_scored": 160,
+   "b1_cluster_f1": 80,
+   "b1_luay_norm_exact": 80,
+   "b1_ha_balanced_error": 80,
+   "b3_cells": 32,
+   "cells": 80
+  }
+ },
+ "problems": [],
+ "sources": {
+  "camus_tm_p0.90_c24": {
+   "landed_csv": "taxmiss_eval/results/camus_taxmiss.csv",
+   "sha256": "a036e18c36f546e08bfcea5e416af672de174d4467a4f966faa16c903f6ed134"
+  }
+ }
+}

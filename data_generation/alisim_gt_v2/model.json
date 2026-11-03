@@ -1,0 +1,16 @@
+{
+ "branch_scale": 0.018,
+ "kappa": 2.0,
+ "base_freqs": "0.3,0.2,0.2,0.3",
+ "gamma_shape": 1.0,
+ "gamma_cats": 4,
+ "indel_ins": 0.03,
+ "indel_del": 0.03,
+ "indel_size": "POW{1.7/100}",
+ "outgroup_alpha": 0.5,
+ "inference_model": "HKY+F+G4",
+ "fast": true,
+ "keep_ident": true,
+ "theta": 0.036,
+ "sim_model": "HKY{2}+F{0.3,0.2,0.2,0.3}+G4{1}"
+}

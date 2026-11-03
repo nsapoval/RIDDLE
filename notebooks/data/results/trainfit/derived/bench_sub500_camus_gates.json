@@ -1,0 +1,70 @@
+{
+ "variant": "z+tc",
+ "thr": 6.0,
+ "rho": 2,
+ "stats": {
+  "camus_sub500_d0": {
+   "ha_scored": 160,
+   "b1_cluster_f1": 80,
+   "b1_luay_norm_exact": 80,
+   "b1_ha_balanced_error": 80,
+   "b3_cells": 35,
+   "cells": 80
+  },
+  "camus_sub500_d1": {
+   "ha_scored": 160,
+   "b1_cluster_f1": 80,
+   "b1_luay_norm_exact": 80,
+   "b1_ha_balanced_error": 80,
+   "b3_cells": 39,
+   "cells": 80
+  },
+  "camus_sub500_d2": {
+   "ha_scored": 160,
+   "b1_cluster_f1": 80,
+   "b1_luay_norm_exact": 80,
+   "b1_ha_balanced_error": 80,
+   "b3_cells": 31,
+   "cells": 80
+  },
+  "camus_sub500_d3": {
+   "ha_scored": 160,
+   "b1_cluster_f1": 80,
+   "b1_luay_norm_exact": 80,
+   "b1_ha_balanced_error": 80,
+   "b3_cells": 40,
+   "cells": 80
+  },
+  "camus_sub500_d4": {
+   "ha_scored": 160,
+   "b1_cluster_f1": 80,
+   "b1_luay_norm_exact": 80,
+   "b1_ha_balanced_error": 80,
+   "b3_cells": 35,
+   "cells": 80
+  }
+ },
+ "problems": [],
+ "sources": {
+  "camus_sub500_d0": {
+   "landed_csv": "subsample_eval/results/camus_sub500.csv",
+   "sha256": "4ddd9eeae6c0944ac295f09d9043f34fa1928654e7fc30711b8b5b852ea565d5"
+  },
+  "camus_sub500_d1": {
+   "landed_csv": "subsample_eval/results/camus_sub500.csv",
+   "sha256": "4ddd9eeae6c0944ac295f09d9043f34fa1928654e7fc30711b8b5b852ea565d5"
+  },
+  "camus_sub500_d2": {
+   "landed_csv": "subsample_eval/results/camus_sub500.csv",
+   "sha256": "4ddd9eeae6c0944ac295f09d9043f34fa1928654e7fc30711b8b5b852ea565d5"
+  },
+  "camus_sub500_d3": {
+   "landed_csv": "subsample_eval/results/camus_sub500.csv",
+   "sha256": "4ddd9eeae6c0944ac295f09d9043f34fa1928654e7fc30711b8b5b852ea565d5"
+  },
+  "camus_sub500_d4": {
+   "landed_csv": "subsample_eval/results/camus_sub500.csv",
+   "sha256": "4ddd9eeae6c0944ac295f09d9043f34fa1928654e7fc30711b8b5b852ea565d5"
+  }
+ }
+}

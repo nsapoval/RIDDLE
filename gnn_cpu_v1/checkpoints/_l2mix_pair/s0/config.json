@@ -1,0 +1,56 @@
+{
+ "arch": "pair",
+ "tag": "_l2mix",
+ "policy_config": {
+  "n_node_features": 31,
+  "n_global_features": 5,
+  "hidden": 128,
+  "layers": 3,
+  "tanh_clip": 10.0,
+  "dropout": 0.0,
+  "n_dynamic": 3,
+  "conv": "pair",
+  "checkpoint_encoder": true,
+  "containment": true
+ },
+ "arms": [
+  "true",
+  "est_bp1000"
+ ],
+ "phases": [
+  "x25",
+  "x50",
+  "y25",
+  "y50",
+  "l2t25",
+  "l2t50"
+ ],
+ "tau": 2,
+ "seed": 0,
+ "epochs": 50,
+ "batch": 8,
+ "lr": 0.0003,
+ "weight_decay": 0.01,
+ "pos_weight": 42.05478066122692,
+ "zero_scale_globals": false,
+ "zero_node_block": [],
+ "decode_loss": "none",
+ "decode_weight": 0.0,
+ "containment": true,
+ "edge_weight": 0.25,
+ "edge_hard": 16,
+ "edge_random": 2048,
+ "decode_warmup": 5,
+ "decode_cap": "n_true",
+ "ha_train_decoder": null,
+ "ha_jobs": null,
+ "val_decoder": "auto",
+ "val_max_level": 2,
+ "init": null,
+ "split": [
+  700,
+  800
+ ],
+ "n_train": 8400,
+ "n_val": 1200
+}

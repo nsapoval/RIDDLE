@@ -1,0 +1,35 @@
+{
+ "built": "2026-10-23T17:06:22-0500",
+ "family": "netcs",
+ "conds": [
+  "p0.90_c24"
+ ],
+ "rows": 3600,
+ "by_cond_method_status": {
+  "p0.90_c24|BROOQS*|ok": 1200,
+  "p0.90_c24|NetCS*|error: rc=-11": 47,
+  "p0.90_c24|NetCS*|error: score: ValueError: duplicate leaf labels": 1,
+  "p0.90_c24|NetCS*|error: score: ValueError: taxon set: missing [], extra ['A-17136']": 1,
+  "p0.90_c24|NetCS*|error: score: ValueError: taxon set: missing [], extra ['A-26448']": 1,
+  "p0.90_c24|NetCS*|error: score: ValueError: taxon set: missing [], extra ['A16992']": 1,
+  "p0.90_c24|NetCS*|error: score: ValueError: taxon set: missing [], extra ['A20736']": 1,
+  "p0.90_c24|NetCS*|error: score: ValueError: taxon set: missing [], extra ['A4896']": 1,
+  "p0.90_c24|NetCS*|ok": 838,
+  "p0.90_c24|NetCS*|out_not_rootable": 309,
+  "p0.90_c24|ours/l2mix_pair/selF1 [relaxed L2]|ok": 1200
+ },
+ "hybrid_ancestry": {
+  "networks": 3547,
+  "agree": 3547
+ },
+ "luay": {
+  "measured": 9513,
+  "failed": 0
+ },
+ "stats": {
+  "control_tobs": 0
+ },
+ "gaps": [],
+ "problems": [],
+ "seconds": 58.8
+}

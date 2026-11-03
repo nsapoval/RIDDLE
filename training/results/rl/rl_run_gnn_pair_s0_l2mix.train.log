@@ -1,0 +1,56 @@
+[queue] === pair seed 0_l2mix ===
+[w10] arch=pair (layers=3 conv=pair) seed=0 phases=x25+x50+y25+y50+l2t25+l2t50 arms=true+est_bp1000 tau=2: 8400 train / 1200 val cells, device=cuda
+[w10] policy: 1,041,931 parameters | pos_weight 42.1 (positive rate 2.323%)
+[w10] epoch   0: loss 0.1213 | val F1 0.9177 (greedy 0.7418, +0.1759) | exact 164/1200 | AP 0.9788 (support 0.7256) | err-red +0.967 | HA BER 0.106 (greedy 0.774) | edge 0.2126 | 2129s  <- best  <- best HA
+[w10] epoch   1: loss 0.0591 | val F1 0.9359 (greedy 0.7418, +0.1941) | exact 223/1200 | AP 0.9878 (support 0.7256) | err-red +0.981 | HA BER 0.087 (greedy 0.774) | edge 0.1335 | 2074s  <- best  <- best HA
+[w10] epoch   2: loss 0.0489 | val F1 0.9374 (greedy 0.7418, +0.1956) | exact 233/1200 | AP 0.9893 (support 0.7256) | err-red +0.984 | HA BER 0.081 (greedy 0.774) | edge 0.1176 | 2076s  <- best  <- best HA
+[w10] epoch   3: loss 0.0437 | val F1 0.9412 (greedy 0.7418, +0.1994) | exact 256/1200 | AP 0.9917 (support 0.7256) | err-red +0.988 | HA BER 0.075 (greedy 0.774) | edge 0.1083 | 2077s  <- best  <- best HA
+[w10] epoch   4: loss 0.0400 | val F1 0.9442 (greedy 0.7418, +0.2024) | exact 270/1200 | AP 0.9922 (support 0.7256) | err-red +0.989 | HA BER 0.067 (greedy 0.774) | edge 0.1007 | 2078s  <- best  <- best HA
+[w10] epoch   5: loss 0.0365 | val F1 0.9420 (greedy 0.7418, +0.2002) | exact 225/1200 | AP 0.9913 (support 0.7256) | err-red +0.987 | HA BER 0.061 (greedy 0.774) | edge 0.0951 | 2075s  <- best HA
+[w10] epoch   6: loss 0.0348 | val F1 0.9465 (greedy 0.7418, +0.2046) | exact 281/1200 | AP 0.9928 (support 0.7256) | err-red +0.990 | HA BER 0.060 (greedy 0.774) | edge 0.0905 | 2072s  <- best  <- best HA
+[w10] epoch   7: loss 0.0322 | val F1 0.9490 (greedy 0.7418, +0.2071) | exact 306/1200 | AP 0.9932 (support 0.7256) | err-red +0.990 | HA BER 0.057 (greedy 0.774) | edge 0.0866 | 2078s  <- best
+[w10] epoch   8: loss 0.0309 | val F1 0.9465 (greedy 0.7418, +0.2047) | exact 274/1200 | AP 0.9934 (support 0.7256) | err-red +0.990 | HA BER 0.057 (greedy 0.774) | edge 0.0838 | 2068s  <- best HA
+[w10] epoch   9: loss 0.0296 | val F1 0.9490 (greedy 0.7418, +0.2071) | exact 273/1200 | AP 0.9940 (support 0.7256) | err-red +0.991 | HA BER 0.055 (greedy 0.774) | edge 0.0812 | 2074s  <- best
+[w10] epoch  10: loss 0.0277 | val F1 0.9498 (greedy 0.7418, +0.2080) | exact 305/1200 | AP 0.9940 (support 0.7256) | err-red +0.992 | HA BER 0.053 (greedy 0.774) | edge 0.0782 | 2075s  <- best
+[w10] epoch  11: loss 0.0266 | val F1 0.9486 (greedy 0.7418, +0.2068) | exact 299/1200 | AP 0.9934 (support 0.7256) | err-red +0.991 | HA BER 0.054 (greedy 0.774) | edge 0.0764 | 2076s
+[w10] epoch  12: loss 0.0256 | val F1 0.9507 (greedy 0.7418, +0.2089) | exact 317/1200 | AP 0.9941 (support 0.7256) | err-red +0.992 | HA BER 0.052 (greedy 0.774) | edge 0.0752 | 2076s  <- best
+[w10] epoch  13: loss 0.0250 | val F1 0.9508 (greedy 0.7418, +0.2090) | exact 304/1200 | AP 0.9942 (support 0.7256) | err-red +0.992 | HA BER 0.048 (greedy 0.774) | edge 0.0736 | 2076s  <- best  <- best HA
+[w10] epoch  14: loss 0.0238 | val F1 0.9516 (greedy 0.7418, +0.2097) | exact 329/1200 | AP 0.9946 (support 0.7256) | err-red +0.992 | HA BER 0.050 (greedy 0.774) | edge 0.0718 | 2074s  <- best
+[w10] epoch  15: loss 0.0229 | val F1 0.9504 (greedy 0.7418, +0.2086) | exact 297/1200 | AP 0.9945 (support 0.7256) | err-red +0.992 | HA BER 0.053 (greedy 0.774) | edge 0.0706 | 2065s
+[w10] epoch  16: loss 0.0224 | val F1 0.9509 (greedy 0.7418, +0.2090) | exact 309/1200 | AP 0.9951 (support 0.7256) | err-red +0.993 | HA BER 0.043 (greedy 0.774) | edge 0.0689 | 2077s  <- best HA
+[w10] epoch  17: loss 0.0213 | val F1 0.9515 (greedy 0.7418, +0.2097) | exact 313/1200 | AP 0.9949 (support 0.7256) | err-red +0.993 | HA BER 0.042 (greedy 0.774) | edge 0.0677 | 2070s  <- best HA
+[w10] epoch  18: loss 0.0213 | val F1 0.9509 (greedy 0.7418, +0.2091) | exact 300/1200 | AP 0.9944 (support 0.7256) | err-red +0.992 | HA BER 0.055 (greedy 0.774) | edge 0.0670 | 2073s
+[w10] epoch  19: loss 0.0203 | val F1 0.9523 (greedy 0.7418, +0.2105) | exact 313/1200 | AP 0.9954 (support 0.7256) | err-red +0.993 | HA BER 0.046 (greedy 0.774) | edge 0.0663 | 2076s  <- best
+[w10] epoch  20: loss 0.0200 | val F1 0.9512 (greedy 0.7418, +0.2093) | exact 305/1200 | AP 0.9947 (support 0.7256) | err-red +0.992 | HA BER 0.055 (greedy 0.774) | edge 0.0654 | 2075s
+[w10] epoch  21: loss 0.0196 | val F1 0.9521 (greedy 0.7418, +0.2102) | exact 323/1200 | AP 0.9950 (support 0.7256) | err-red +0.993 | HA BER 0.048 (greedy 0.774) | edge 0.0644 | 2074s
+[w10] epoch  22: loss 0.0188 | val F1 0.9524 (greedy 0.7418, +0.2105) | exact 326/1200 | AP 0.9954 (support 0.7256) | err-red +0.993 | HA BER 0.056 (greedy 0.774) | edge 0.0640 | 2068s  <- best
+[w10] epoch  23: loss 0.0184 | val F1 0.9515 (greedy 0.7418, +0.2097) | exact 302/1200 | AP 0.9948 (support 0.7256) | err-red +0.992 | HA BER 0.048 (greedy 0.774) | edge 0.0628 | 2073s
+[w10] epoch  24: loss 0.0185 | val F1 0.9541 (greedy 0.7418, +0.2122) | exact 348/1200 | AP 0.9954 (support 0.7256) | err-red +0.993 | HA BER 0.046 (greedy 0.774) | edge 0.0629 | 2068s  <- best
+[w10] epoch  25: loss 0.0176 | val F1 0.9531 (greedy 0.7418, +0.2113) | exact 309/1200 | AP 0.9949 (support 0.7256) | err-red +0.993 | HA BER 0.043 (greedy 0.774) | edge 0.0618 | 2078s
+[w10] epoch  26: loss 0.0176 | val F1 0.9532 (greedy 0.7418, +0.2114) | exact 326/1200 | AP 0.9952 (support 0.7256) | err-red +0.993 | HA BER 0.045 (greedy 0.774) | edge 0.0615 | 2075s
+[w10] epoch  27: loss 0.0169 | val F1 0.9497 (greedy 0.7418, +0.2079) | exact 302/1200 | AP 0.9939 (support 0.7256) | err-red +0.992 | HA BER 0.047 (greedy 0.774) | edge 0.0604 | 2077s
+[w10] epoch  28: loss 0.0169 | val F1 0.9536 (greedy 0.7418, +0.2118) | exact 322/1200 | AP 0.9954 (support 0.7256) | err-red +0.993 | HA BER 0.044 (greedy 0.774) | edge 0.0601 | 2062s
+[w10] epoch  29: loss 0.0163 | val F1 0.9536 (greedy 0.7418, +0.2118) | exact 338/1200 | AP 0.9957 (support 0.7256) | err-red +0.994 | HA BER 0.040 (greedy 0.774) | edge 0.0595 | 2059s
+[w10] epoch  30: loss 0.0161 | val F1 0.9550 (greedy 0.7418, +0.2132) | exact 351/1200 | AP 0.9956 (support 0.7256) | err-red +0.994 | HA BER 0.043 (greedy 0.774) | edge 0.0591 | 2051s  <- best
+[w10] epoch  31: loss 0.0158 | val F1 0.9525 (greedy 0.7418, +0.2107) | exact 309/1200 | AP 0.9951 (support 0.7256) | err-red +0.993 | HA BER 0.043 (greedy 0.774) | edge 0.0585 | 2055s
+[w10] epoch  32: loss 0.0157 | val F1 0.9531 (greedy 0.7418, +0.2113) | exact 325/1200 | AP 0.9949 (support 0.7256) | err-red +0.993 | HA BER 0.043 (greedy 0.774) | edge 0.0581 | 2051s
+[w10] epoch  33: loss 0.0146 | val F1 0.9539 (greedy 0.7418, +0.2120) | exact 324/1200 | AP 0.9957 (support 0.7256) | err-red +0.994 | HA BER 0.044 (greedy 0.774) | edge 0.0573 | 2054s
+[w10] epoch  34: loss 0.0140 | val F1 0.9533 (greedy 0.7418, +0.2115) | exact 324/1200 | AP 0.9947 (support 0.7256) | err-red +0.993 | HA BER 0.044 (greedy 0.774) | edge 0.0570 | 2054s
+[w10] epoch  35: loss 0.0151 | val F1 0.9537 (greedy 0.7418, +0.2119) | exact 328/1200 | AP 0.9954 (support 0.7256) | err-red +0.994 | HA BER 0.047 (greedy 0.774) | edge 0.0568 | 2055s
+[w10] epoch  36: loss 0.0140 | val F1 0.9542 (greedy 0.7418, +0.2124) | exact 323/1200 | AP 0.9951 (support 0.7256) | err-red +0.994 | HA BER 0.040 (greedy 0.774) | edge 0.0560 | 2054s
+[w10] epoch  37: loss 0.0141 | val F1 0.9527 (greedy 0.7418, +0.2109) | exact 320/1200 | AP 0.9950 (support 0.7256) | err-red +0.993 | HA BER 0.051 (greedy 0.774) | edge 0.0557 | 2058s
+[w10] epoch  38: loss 0.0139 | val F1 0.9536 (greedy 0.7418, +0.2118) | exact 335/1200 | AP 0.9953 (support 0.7256) | err-red +0.993 | HA BER 0.046 (greedy 0.774) | edge 0.0553 | 2056s
+[w10] epoch  39: loss 0.0137 | val F1 0.9535 (greedy 0.7418, +0.2116) | exact 323/1200 | AP 0.9952 (support 0.7256) | err-red +0.993 | HA BER 0.051 (greedy 0.774) | edge 0.0555 | 2057s
+[w10] epoch  40: loss 0.0138 | val F1 0.9515 (greedy 0.7418, +0.2096) | exact 297/1200 | AP 0.9940 (support 0.7256) | err-red +0.992 | HA BER 0.040 (greedy 0.774) | edge 0.0549 | 2058s
+[w10] epoch  41: loss 0.0126 | val F1 0.9522 (greedy 0.7418, +0.2104) | exact 302/1200 | AP 0.9947 (support 0.7256) | err-red +0.993 | HA BER 0.055 (greedy 0.774) | edge 0.0541 | 2055s
+[w10] epoch  42: loss 0.0127 | val F1 0.9535 (greedy 0.7418, +0.2117) | exact 320/1200 | AP 0.9950 (support 0.7256) | err-red +0.993 | HA BER 0.042 (greedy 0.774) | edge 0.0543 | 2055s
+[w10] epoch  43: loss 0.0127 | val F1 0.9535 (greedy 0.7418, +0.2117) | exact 322/1200 | AP 0.9954 (support 0.7256) | err-red +0.994 | HA BER 0.043 (greedy 0.774) | edge 0.0538 | 2057s
+[w10] epoch  44: loss 0.0127 | val F1 0.9538 (greedy 0.7418, +0.2120) | exact 319/1200 | AP 0.9952 (support 0.7256) | err-red +0.993 | HA BER 0.048 (greedy 0.774) | edge 0.0534 | 2062s
+[w10] epoch  45: loss 0.0124 | val F1 0.9533 (greedy 0.7418, +0.2115) | exact 319/1200 | AP 0.9955 (support 0.7256) | err-red +0.993 | HA BER 0.047 (greedy 0.774) | edge 0.0532 | 2064s
+[w10] epoch  46: loss 0.0121 | val F1 0.9519 (greedy 0.7418, +0.2101) | exact 300/1200 | AP 0.9950 (support 0.7256) | err-red +0.993 | HA BER 0.049 (greedy 0.774) | edge 0.0530 | 2056s
+[w10] epoch  47: loss 0.0118 | val F1 0.9533 (greedy 0.7418, +0.2115) | exact 307/1200 | AP 0.9955 (support 0.7256) | err-red +0.993 | HA BER 0.047 (greedy 0.774) | edge 0.0525 | 2054s
+[w10] epoch  48: loss 0.0116 | val F1 0.9535 (greedy 0.7418, +0.2117) | exact 341/1200 | AP 0.9950 (support 0.7256) | err-red +0.993 | HA BER 0.043 (greedy 0.774) | edge 0.0523 | 2055s
+[w10] epoch  49: loss 0.0119 | val F1 0.9546 (greedy 0.7418, +0.2128) | exact 324/1200 | AP 0.9958 (support 0.7256) | err-red +0.994 | HA BER 0.043 (greedy 0.774) | edge 0.0521 | 2056s
+[w10] best epoch 30 val F1 0.9550 (+0.2132 vs greedy) -> /home/ns58/net-opt/results/rl/rl_run_gnn_pair_s0_l2mix/best.pt
+[w10] wrote /home/ns58/net-opt/results/rl/rl_gnn_train_pair_s0_l2mix_tau2.parquet
+[queue] done

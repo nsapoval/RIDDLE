@@ -1,0 +1,28 @@
+{
+ "built": "2026-10-21T19:11:01-0500",
+ "family": "l2reg",
+ "conds": [
+  "p0.90_c24"
+ ],
+ "rows": 60,
+ "by_cond_method_status": {
+  "p0.90_c24|BROOQS|ok": 20,
+  "p0.90_c24|NetCS|ok": 20,
+  "p0.90_c24|ours/l2mix_pair/selF1 [relaxed L2]|ok": 20
+ },
+ "hybrid_ancestry": {
+  "networks": 60,
+  "agree": 60
+ },
+ "luay": {
+  "measured": 168,
+  "failed": 0
+ },
+ "stats": {
+  "control_tobs": 20,
+  "optional_fixed_not_run": 40
+ },
+ "gaps": [],
+ "problems": [],
+ "seconds": 2.8
+}

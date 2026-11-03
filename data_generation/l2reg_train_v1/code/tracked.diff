@@ -1,0 +1,651 @@
+diff --git a/src/opc/mpl/likelihood.py b/src/opc/mpl/likelihood.py
+index d3acdce..f6de9e4 100644
+--- a/src/opc/mpl/likelihood.py
++++ b/src/opc/mpl/likelihood.py
+@@ -94,7 +94,7 @@ class Parameters:
+             elif not net.is_leaf(v):
+                 edges.append((v, net.tree_parent[v]))
+         lengths = np.array([net.edge_length(p, c) for c, p in edges], dtype=float)
+-        gammas = np.full(len(hybrids), net.gamma, dtype=float)
++        gammas = np.array([net.gamma_of(h) for h in hybrids], dtype=float)
+         return cls(tuple(edges), tuple(hybrids), lengths, gammas)
+ 
+     @property
+diff --git a/src/opc/mpl/msnc3.py b/src/opc/mpl/msnc3.py
+index 1fae786..3e53d5c 100644
+--- a/src/opc/mpl/msnc3.py
++++ b/src/opc/mpl/msnc3.py
+@@ -241,7 +241,7 @@ def triple_probabilities(net: N.Network, taxa, *, lengths=None, gammas=None) ->
+     def gamma_of(hybrid: int) -> float:
+         if gammas is not None and hybrid in gammas:
+             return float(gammas[hybrid])
+-        return net.gamma
++        return net.gamma_of(hybrid)
+ 
+     # All three lineages start *at* their leaf, on a sentinel edge that the loop then moves them
+     # off.  Two reasons it is done here and in this form.
+@@ -357,7 +357,8 @@ def triple_probabilities_mixture(net: N.Network, taxa, **kwargs) -> np.ndarray:
+         # Resolve from the last reticulation backwards: index i stays valid while earlier ones are
+         # untouched, and ``resolve_one_reticulation`` renumbers everything after the one it drops.
+         for i in range(net.n_retics - 1, -1, -1):
+-            w *= net.gamma if choice[i] else 1.0 - net.gamma
++            g = net.gamma_of(net.retics[i].hybrid)
++            w *= g if choice[i] else 1.0 - g
+             tree = resolve_one_reticulation(tree, i, choice[i])
+         if w > 0.0:
+             out += w * triple_probabilities(tree, taxa)
+diff --git a/src/opc/simulate/gene_trees.jl b/src/opc/simulate/gene_trees.jl
+index 5344482..564a724 100644
+--- a/src/opc/simulate/gene_trees.jl
++++ b/src/opc/simulate/gene_trees.jl
+@@ -4,7 +4,8 @@ Gene trees under the network multispecies coalescent, via PhyloCoalSimulations.
+ 
+     julia --project=julia src/opc/simulate/gene_trees.jl manifest.json
+ 
+-The manifest is a JSON array of jobs, each ``{enewick, out, n_loci, seed, n_taxa, r, cu}``.  One
++The manifest is a JSON array of jobs, each ``{enewick, out, n_loci, seed, n_taxa, r, cu}`` plus
++optional ``level`` (default ``r > 0 ? 1 : 0``) and ``rescale``.  One
+ process handles many jobs so the ~15 s package load is amortised; the Python driver shards the
+ manifest across processes.
+ 
+@@ -134,7 +135,10 @@ function run_job(job)
+     length(unique(tiplabels(net))) == job.n_taxa || error("duplicate taxon labels")
+     net.numhybrids == job.r || error("expected r=$(job.r), got $(net.numhybrids)")
+     lvl = getlevel(net)
+-    lvl == (job.r > 0 ? 1 : 0) || error("expected level $(job.r > 0 ? 1 : 0), got $lvl")
++    # `level` is optional so that every manifest written before the level-2 benchmark existed --
++    # all of them level-1 by construction -- keeps its meaning.  That benchmark passes it.
++    want = get(job, :level, job.r > 0 ? 1 : 0)
++    lvl == want || error("expected level $want, got $lvl")
+ 
+     # Check *before* rescaling too: SiPhyNetwork's branch-length bug (issue #8) adds a constant
+     # in absolute birth-death time units, so it is largest here and the blame is unambiguous.
+diff --git a/src/opc/simulate/msnc_oracle.py b/src/opc/simulate/msnc_oracle.py
+index 72ee546..596fd95 100644
+--- a/src/opc/simulate/msnc_oracle.py
++++ b/src/opc/simulate/msnc_oracle.py
+@@ -119,7 +119,7 @@ def _simulate_one(net: Network, order: list[int], rng: random.Random):
+         else:
+             donor = net.donor_of[v]
+             tree_p = net.tree_parent[v]
+-            gamma = net.gamma
++            gamma = net.gamma_of(v)
+             to_donor, to_tree = [], []
+             for ln in lineages:
+                 (to_donor if rng.random() < gamma else to_tree).append(ln)
+diff --git a/src/opc/simulate/networks.py b/src/opc/simulate/networks.py
+index 6095587..9ef3d13 100644
+--- a/src/opc/simulate/networks.py
++++ b/src/opc/simulate/networks.py
+@@ -58,7 +58,10 @@ __all__ = [
+     "build_base",
+     "scaled",
+     "with_gamma",
++    "with_gammas",
+     "with_reticulations",
++    "Block",
++    "blocks",
+     "hardwired_clusters",
+     "full_clusters",
+     "nontrivial_clusters",
+@@ -91,11 +94,16 @@ class Reticulation:
+ 
+ @dataclass
+ class Network:
+-    """A rooted, time-embedded, binary level-1 phylogenetic network.
++    """A rooted, time-embedded, binary phylogenetic network.
+ 
+     Every node has exactly one *tree* parent (except the root).  A hybrid node additionally has a
+     *donor* parent reached by a zero-length horizontal edge.  ``gamma`` is the inheritance
+     probability on the horizontal edge; the tree edge into the hybrid carries ``1 - gamma``.
++    ``gammas``, when set (:func:`with_gammas`), gives each hybrid its own value instead, and every
++    reader goes through :meth:`gamma_of` so the two can never disagree.
++
++    The structure is not level-1-specific: this module's generator places level-1 reticulations,
++    and :mod:`opc.simulate.level2` places level-2 ones into the same representation.
+     """
+ 
+     n_taxa: int
+@@ -118,6 +126,11 @@ class Network:
+     #: Placements rejected for falling outside the requested cycle-size band, so a low placement
+     #: rate can be attributed to the band rather than to the disjointness rule.
+     cycle_size_rejections: int = 0
++    #: Per-hybrid inheritance probability on the donor edge, keyed by hybrid node id; ``None``
++    #: means every hybrid uses the scalar ``gamma``.  **Last field, and read with getattr**:
++    #: the published pickles predate it, and unpickling restores ``__dict__`` without
++    #: ``__init__``, so they have no such attribute at all.
++    gammas: dict[int, float] | None = None
+ 
+     # ---------------------------------------------------------------- structure
+ 
+@@ -154,13 +167,20 @@ class Network:
+     def edge_length(self, parent: int, child: int) -> float:
+         return self.time[child] - self.time[parent]
+ 
++    def gamma_of(self, hybrid: int) -> float:
++        """Inheritance probability of ``hybrid``'s donor (horizontal) edge."""
++        per = getattr(self, "gammas", None)
++        return per[hybrid] if per else self.gamma
++
+     def gamma_on(self, parent: int, child: int) -> float | None:
+         """Inheritance probability of the edge ``parent -> child``, or None for tree edges."""
+         if child not in self.donor_of:
+             return None
+-        return self.gamma if self.donor_of[child] == parent else 1.0 - self.gamma
++        g = self.gamma_of(child)
++        return g if self.donor_of[child] == parent else 1.0 - g
+ 
+     def copy(self) -> Network:
++        per = getattr(self, "gammas", None)
+         return Network(
+             n_taxa=self.n_taxa,
+             labels=list(self.labels),
+@@ -179,6 +199,7 @@ class Network:
+             consumed_vertices=set(getattr(self, "consumed_vertices", ())),
+             shortcut_rejections=self.shortcut_rejections,
+             cycle_size_rejections=getattr(self, "cycle_size_rejections", 0),
++            gammas=dict(per) if per else None,
+         )
+ 
+ 
+@@ -485,9 +506,27 @@ def scaled(net: Network, cu: float) -> Network:
+ 
+ 
+ def with_gamma(net: Network, gamma: float) -> Network:
++    """One inheritance probability for every hybrid.  Clears any per-hybrid ``gammas``."""
+     if not 0.0 < gamma < 1.0:
+         raise ValueError(f"gamma must be in (0,1), got {gamma}")
+-    return replace(net.copy(), gamma=gamma)
++    return replace(net.copy(), gamma=gamma, gammas=None)
++
++
++def with_gammas(net: Network, gammas: dict[int, float]) -> Network:
++    """One inheritance probability per hybrid, on its donor (horizontal) edge.
++
++    Keys are hybrid node ids and must be exactly the network's hybrids -- a partial mapping would
++    let the unset ones fall back to the scalar silently, which is the failure this exists to rule
++    out.  The scalar ``gamma`` is then read by nothing.
++    """
++    if set(gammas) != set(net.donor_of):
++        raise ValueError(f"gammas keys {sorted(gammas)} != hybrids {sorted(net.donor_of)}")
++    for h, g in gammas.items():
++        if not 0.0 < g < 1.0:
++            raise ValueError(f"gamma must be in (0,1), got {g} at hybrid {h}")
++    out = net.copy()
++    out.gammas = {int(h): float(g) for h, g in gammas.items()}
++    return out
+ 
+ 
+ def _suppress_degree2(net: Network, v: int) -> None:
+@@ -517,6 +556,8 @@ def with_reticulations(net: Network, r: int) -> Network:
+     out.retics = out.retics[:r]
+     out.consumed = set()
+     out.consumed_vertices = set()
++    if out.gammas:
++        out.gammas = {h: g for h, g in out.gammas.items() if h in out.donor_of}
+     return out
+ 
+ 
+@@ -593,6 +634,28 @@ def singleton_hybrid_fraction(net: Network) -> float:
+     return sum(len(below[r.hybrid]) == 1 for r in net.retics) / len(net.retics)
+ 
+ 
++@dataclass(frozen=True)
++class Block:
++    """One biconnected component of the network's underlying undirected graph."""
++
++    #: ``(parent, child)`` pairs, horizontal edges included, sorted.
++    edges: tuple[tuple[int, int], ...]
++    #: Hybrids whose reticulation this component holds -- attributed by :func:`level`'s rule.
++    hybrids: tuple[int, ...]
++
++    @property
++    def vertices(self) -> frozenset[int]:
++        return frozenset(v for e in self.edges for v in e)
++
++    @property
++    def n_retics(self) -> int:
++        return len(self.hybrids)
++
++    @property
++    def is_bridge(self) -> bool:
++        return len(self.edges) == 1
++
++
+ def level(net: Network) -> int:
+     """Maximum number of reticulations in any biconnected component (Hopcroft-Tarjan, iterative).
+ 
+@@ -604,6 +667,17 @@ def level(net: Network) -> int:
+     the cycles apart -- but it does arise in the **regular version** of such a network, which is
+     exactly the object a cluster-based method reconstructs (:mod:`opc.solve.closure`).
+     """
++    return max((b.n_retics for b in blocks(net)), default=0)
++
++
++def blocks(net: Network) -> list[Block]:
++    """Every biconnected component, bridges included (Hopcroft-Tarjan, iterative).
++
++    A hybrid is attributed to the component holding its **tree** in-edge, which is :func:`level`'s
++    rule (A20).  Both in-edges of a hybrid lie on a common cycle and so always share a component;
++    the rule only matters when the hybrid is also a cut vertex, where "every component it touches"
++    would count it twice.
++    """
+     adj: dict[int, list[tuple[int, int]]] = {}
+     edges: list[tuple[int, int]] = []
+     in_edge: dict[int, int] = {}
+@@ -618,7 +692,7 @@ def level(net: Network) -> int:
+     disc: dict[int, int] = {}
+     low: dict[int, int] = {}
+     stack_edges: list[int] = []
+-    best = 0
++    out: list[Block] = []
+     counter = 0
+     for start in list(adj):
+         if start in disc:
+@@ -655,8 +729,11 @@ def level(net: Network) -> int:
+                     if stack_edges:
+                         comp.append(stack_edges.pop())
+                     here = set(comp)
+-                    best = max(best, sum(1 for e in in_edge.values() if e in here))
+-    return best
++                    out.append(Block(
++                        edges=tuple(sorted(edges[e] for e in here)),
++                        hybrids=tuple(sorted(c for c, e in in_edge.items() if e in here)),
++                    ))
++    return out
+ 
+ 
+ # ------------------------------------------------------------------------------ extended Newick
+@@ -675,7 +752,7 @@ def to_enewick(net: Network) -> str:
+     tag = {ret.hybrid: k + 1 for k, ret in enumerate(net.retics)}
+     major: dict[int, int] = {}
+     for ret in net.retics:
+-        donor_gamma = net.gamma
++        donor_gamma = net.gamma_of(ret.hybrid)
+         major[ret.hybrid] = ret.donor if donor_gamma > 0.5 else net.tree_parent[ret.hybrid]
+ 
+     def emit(v: int, parent: int | None) -> str:
+@@ -725,7 +802,7 @@ def metadata(net: Network, **extra) -> dict:
+         retics.append(
+             {
+                 "tag": f"H{k + 1}",
+-                "gamma": net.gamma,
++                "gamma": net.gamma_of(ret.hybrid),
+                 "time": ret.time,
+                 "cycle_size": cycle_size(net, ret),
+                 "hybrid_cluster": sorted(below[ret.hybrid]),
+@@ -733,11 +810,14 @@ def metadata(net: Network, **extra) -> dict:
+                 "tree_parent_cluster": sorted(below[tp]),
+             }
+         )
++    # Per-hybrid gammas live in each reticulation's row; the scalar is then meaningless, and
++    # reporting it would invite reading it.  Unset, the dict below is exactly what it always was.
++    per = getattr(net, "gammas", None)
+     return {
+         "n_taxa": net.n_taxa,
+         "labels": net.labels,
+         "n_retics": net.n_retics,
+-        "gamma": net.gamma,
++        "gamma": None if per else net.gamma,
+         "level": level(net),
+         "root_height": max(net.time),
+         "internal_branch_quantiles": quantiles,
+diff --git a/src/opc/simulate/outgroup.py b/src/opc/simulate/outgroup.py
+index 6f1a889..f558028 100644
+--- a/src/opc/simulate/outgroup.py
++++ b/src/opc/simulate/outgroup.py
+@@ -168,26 +168,52 @@ def graft_outgroup(newick: str, d: float, t_out: float, label: str = OUTGROUP_LA
+             f"{label}:{t_out * scale:.{digits}f});")
+ 
+ 
+-def _resolve(x: int, f: int, adj):
+-    """Descend through degree-2 nodes, so suppressing the old root leaves no unary node."""
++def _resolve(x: int, f: int, adj, elen=None):
++    """Descend through degree-2 nodes, so suppressing the old root leaves no unary node.
++
++    Returns ``(x, f, ns, length)``.  ``length`` is the **sum** of the edges walked through and is
++    0.0 when ``elen`` is not given.  Summing is the whole reason this is not a one-liner: the
++    degree-2 nodes being suppressed take their edges with them, and the single edge that replaces
++    the chain has to carry their total or the tree silently shrinks.
++    """
++    acc = 0.0 if elen is None else elen[(x, f)]
+     ns = [y for y in adj[x] if y != f]
+     while len(ns) == 1:
++        if elen is not None:
++            acc += elen[(ns[0], x)]
+         x, f = ns[0], x
+         ns = [y for y in adj[x] if y != f]
+-    return x, f, ns
++    return x, f, ns, acc
++
+ 
++def _emit(entry: tuple[str, float], keep_lengths: bool, digits: int) -> str:
++    """One child of a Newick group: ``subtree`` or ``subtree:length``."""
++    body, ell = entry
++    return f"{body}:{ell:.{digits}f}" if keep_lengths else body
+ 
+-def reroot_on_outgroup(newick: str, label: str = OUTGROUP_LABEL) -> str:
+-    """Root on the outgroup's pendant edge, delete the outgroup, drop branch lengths.
++
++def reroot_on_outgroup(newick: str, label: str = OUTGROUP_LABEL, *,
++                       keep_lengths: bool = False, digits: int = 10) -> str:
++    """Root on the outgroup's pendant edge and delete the outgroup.
+ 
+     Rooting an unrooted tree at ``OUT`` and then deleting ``OUT`` is exactly "re-emit the tree
+     rooted at ``OUT``'s unique neighbour, excluding ``OUT``" -- no edge splitting needed.
+ 
+-    Branch lengths are dropped because :func:`opc.clusters.extract.clusters_from_newick` strips
+-    them anyway and it halves the stored file.  Raises if ``OUT`` is absent: a silently unrooted
+-    tree would yield wrong clusters without erroring anywhere downstream.
++    **Branch lengths are dropped by default, and that default is a saving that became a
++    liability.**  It was chosen when :func:`opc.clusters.extract.clusters_from_newick` stripped
++    ``:length`` anyway and halving the stored file was pure gain.  net-opt's W13 then built
++    twenty-one node features out of those lengths, and a length-free tree does not fail anywhere:
++    it produces ``blen_* = 0``, ``bdepth_* = 1``, ``bsib_* = 0`` and a ``brank_*`` that is the
++    **Newick write order** -- a column that varies per cluster, looks like a feature and carries
++    nothing.  Pass ``keep_lengths=True`` for anything W13 will read; that is what
++    ``opc.l2train``'s ``lengths`` stage writes.  The default is retained because
++    :func:`root_and_prune_file` produced the landed ``alisim_gt_v1/v2`` and ``l2reg_n200_v1``
++    estimates with it and must keep reproducing them byte for byte.
++
++    Raises if ``OUT`` is absent: a silently unrooted tree would yield wrong clusters without
++    erroring anywhere downstream.
+     """
+-    parent, _, lab, children = parse_newick(newick)
++    parent, length, lab, children = parse_newick(newick)
+     try:
+         out = next(i for i, nm in enumerate(lab) if nm == label)
+     except StopIteration:
+@@ -199,21 +225,32 @@ def reroot_on_outgroup(newick: str, label: str = OUTGROUP_LABEL) -> str:
+     if len(adj[out]) != 1:
+         raise ValueError(f"outgroup {label!r} has degree {len(adj[out])}, expected 1")
+ 
+-    memo: dict[tuple[int, int], str] = {}
++    # **Keyed on the edge, not on the node.**  Rerooting reverses every edge on the path from the
++    # written root to the new one, and ``length[i]`` is the length of the edge above ``i`` *in the
++    # written orientation* only.  Reading it by node would give a reversed edge its child's length.
++    elen = None
++    if keep_lengths:
++        elen = {}
++        for i in range(1, len(parent)):
++            elen[(i, parent[i])] = elen[(parent[i], i)] = length[i]
++
++    memo: dict[tuple[int, int], tuple[str, float]] = {}
+     root = adj[out][0]
+     stack = [(root, out, False)]
+     while stack:
+         y0, f0, done = stack.pop()
+-        x, f, ns = _resolve(y0, f0, adj)
++        x, f, ns, acc = _resolve(y0, f0, adj, elen)
+         if not ns:
+-            memo[(y0, f0)] = lab[x] or ""
++            memo[(y0, f0)] = (lab[x] or "", acc)
+         elif done:
+-            memo[(y0, f0)] = "(" + ",".join(memo[(y, x)] for y in ns) + ")"
++            memo[(y0, f0)] = ("(" + ",".join(
++                _emit(memo[(y, x)], keep_lengths, digits) for y in ns) + ")", acc)
+         else:
+             stack.append((y0, f0, True))
+             for y in ns:
+                 stack.append((y, x, False))
+-    return memo[(root, out)] + ";"
++    # The outgroup's own pendant edge is memo[(root, out)][1], and it is dropped with OUT.
++    return memo[(root, out)][0] + ";"
+ 
+ 
+ def _quantile(values, q: float) -> float:
+diff --git a/src/opc/simulate/seqsim.py b/src/opc/simulate/seqsim.py
+index e1201ab..3cb37bb 100644
+--- a/src/opc/simulate/seqsim.py
++++ b/src/opc/simulate/seqsim.py
+@@ -302,6 +302,14 @@ class EstJob:
+     scratch: Path
+     iq_target_ns: float = 4e6
+     n_chunks: int = 1
++    #: Keep every locus's AliSim alignment, gzipped, as ``aln_dir/<cell_key>/loc<NNNN>.phy.gz`` --
++    #: global locus index, outgroup row ``OUT`` included.  ``None``, the default and every arm
++    #: before the level-2 benchmark, keeps nothing and changes nothing else either.
++    aln_dir: Path | None = None
++
++    def aln_paths(self) -> list[Path]:
++        d = self.aln_dir / self.cell_key
++        return [d / f"loc{self.start + i:04d}.phy.gz" for i in range(self.count)]
+ 
+     @property
+     def stem(self) -> str:
+@@ -340,8 +348,11 @@ def run_est_job(job: EstJob) -> tuple[str, str, float]:
+         # would be recomputed from scratch on every resume.
+         merged = job.out_dir / f"{job.cell_key}.nwk.gz"
+         merged_side = job.out_dir / f"{job.cell_key}.json"
++        # A job asked to keep alignments is not done until they exist -- otherwise a cell whose
++        # trees were cached by an earlier alignment-free run would never produce them.
++        alns_ok = job.aln_dir is None or all(p.exists() for p in job.aln_paths())
+         for done, side in ((job.rooted, job.sidecar), (merged, merged_side)):
+-            if done.exists() and side.exists() and \
++            if alns_ok and done.exists() and side.exists() and \
+                     done.stat().st_mtime > job.true_gz.stat().st_mtime:
+                 return job.stem, "cached", 0.0
+         job.out_dir.mkdir(parents=True, exist_ok=True)
+@@ -448,6 +459,18 @@ def run_est_job(job: EstJob) -> tuple[str, str, float]:
+                 **stats,
+                 **job.model.as_dict(),
+             }
++            if job.aln_dir is not None:
++                sidecar["aln_dir"] = str(job.aln_dir / job.cell_key)
++                # Before the trees: the rooted file is the cache marker, so an interruption here
++                # leaves the job visibly unfinished rather than finished without its alignments.
++                # mtime=0 and an empty name make the gzip container itself reproducible.
++                for i, dst in enumerate(job.aln_paths()):
++                    dst.parent.mkdir(parents=True, exist_ok=True)
++                    tmp_dst = dst.with_name(dst.name + ".tmp")
++                    with open(work / f"l{i:06d}.phy", "rb") as fh, open(tmp_dst, "wb") as raw, \
++                            gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0) as gz:
++                        shutil.copyfileobj(fh, gz)
++                    tmp_dst.rename(dst)
+             # Copy to a sibling .tmp then rename, so a reader never sees a partial file even
+             # though the move crosses tmpfs -> NFS.
+             for src, dst in ((work / "rooted.nwk.gz", job.rooted),
+@@ -526,9 +549,14 @@ def _count_lines(gz: Path) -> int:
+         return sum(1 for ln in fh if ln.strip())
+ 
+ 
+-def merge_chunks(cell_key: str, bp: int, root: Path, backend: str) -> dict | None:
+-    """Concatenate a cell's chunks in order and pool their sidecars.  Idempotent."""
+-    out_dir, _ = arm_dirs(root, backend, bp)
++def merge_chunks(cell_key: str, bp: int, root: Path, backend: str,
++                 out_dir: Path | None = None) -> dict | None:
++    """Concatenate a cell's chunks in order and pool their sidecars.  Idempotent.
++
++    ``out_dir`` overrides the ``arm_dirs`` layout, for a package that lays its files out itself.
++    """
++    if out_dir is None:
++        out_dir, _ = arm_dirs(root, backend, bp)
+     final = out_dir / f"{cell_key}.nwk.gz"
+     sides = sorted(out_dir.glob(f"{cell_key}.c[0-9][0-9][0-9].json"))
+     if final.exists() and not sides:
+diff --git a/tests/test_calibration.py b/tests/test_calibration.py
+index 3edeb0d..509f4b9 100644
+--- a/tests/test_calibration.py
++++ b/tests/test_calibration.py
+@@ -162,16 +162,19 @@ def _record(label, md, tv, md0, tv0, **extra) -> None:
+ # ------------------------------------------------------------------------------ Julia backend
+ 
+ 
+-def _julia_topologies(net: N.Network, n_loci: int, seed: int, cu: float) -> Counter:
++def _julia_topologies(net: N.Network, n_loci: int, seed: int, cu: float,
++                      level: int | None = None) -> Counter:
+     with tempfile.TemporaryDirectory(dir=REPO / "data") as td:
+         td = Path(td)
+         enw, out = td / "net.enewick", td / "gt.nwk.gz"
+         enw.write_text(N.to_enewick(net) + "\n")
+         manifest = td / "m.json"
++        # ``level`` is omitted unless given, so the manifests 6a-6c write are unchanged.
++        extra = "" if level is None else ', "level": %d' % level
+         manifest.write_text(
+             '[{"enewick": "%s", "out": "%s", "n_loci": %d, "seed": %d, '
+-            '"n_taxa": %d, "r": %d, "cu": %s}]'
+-            % (enw, out, n_loci, seed, net.n_taxa, net.n_retics, cu)
++            '"n_taxa": %d, "r": %d, "cu": %s%s}]'
++            % (enw, out, n_loci, seed, net.n_taxa, net.n_retics, cu, extra)
+         )
+         env = dict(os.environ, JULIA_DEPOT_PATH=str(DEPOT), JULIA_NUM_THREADS="1")
+         res = subprocess.run(
+@@ -324,6 +327,102 @@ def test_6c_julia_matches_python_oracle_general_network():
+           f"TV {tv:.4f} (floor {tv0:.4f})")
+ 
+ 
++def _marginal_diff(a: Counter, b: Counter) -> float:
++    """Largest per-*cluster* frequency difference: sharp where per-topology ones are not."""
++    na, nb = sum(a.values()), sum(b.values())
++    ma: Counter = Counter()
++    mb: Counter = Counter()
++    for key, v in a.items():
++        for c in key:
++            ma[c] += v
++    for key, v in b.items():
++        for c in key:
++            mb[c] += v
++    return max(abs(ma[k] / na - mb[k] / nb) for k in set(ma) | set(mb))
++
++
++@requires_julia
++@pytest.mark.parametrize("shape", ["S0", "S1", "S2", "S3"])
++def test_6d_julia_matches_oracle_on_level2_blobs(shape):
++    """Level-2 blobs, per-reticulation gamma: what the level-2 benchmark simulates (A62).
++
++    Two things differ from 6c on purpose.  The noise floor is two draws of the **reference**
++    (``_compare`` measures it as Julia against a second oracle draw, which a systematic Julia
++    bias would inflate along with the statistic it is meant to bound).  And the test is shown
++    able to fail: the oracle with the two gammas swapped must land well outside that floor on the
++    per-cluster marginals, which are the sharper statistic at n=7's 10,395 rooted topologies.
++    """
++    from opc.simulate import level2 as L2
++
++    layout = L2.Layout(1, 0, (shape,))
++    net, _ = L2.build_level2(7, layout, seed=300 + L2.SHAPES.index(shape), cu=0.5)
++    assert L2.check(net, layout)["ok"]
++    h1, h2 = (r.hybrid for r in net.retics)
++    net = N.with_gammas(net, {h1: 0.15, h2: 0.45})
++
++    n_loci = 80_000
++    jl = _julia_topologies(net, n_loci, seed=71, cu=0.5, level=2)
++    ora = _oracle_topologies_as_clustersets(net, n_loci, seed=81)
++    null = _oracle_topologies_as_clustersets(net, n_loci, seed=82)
++    md, tv = _stats(jl, ora)
++    md0, tv0 = _stats(null, ora)
++    _record(f"julia vs oracle (level-2 {shape}, gamma 0.15/0.45)", md, tv, md0, tv0,
++            n_topologies=len(set(jl) | set(ora)), n_loci=n_loci)
++    assert md <= max(1.5 * md0, MAX_ABS_DIFF), f"{shape}: per-topology {md:.4f} vs {md0:.4f}"
++    assert tv <= max(1.5 * tv0, MAX_TV), f"{shape}: TV {tv:.4f} vs {tv0:.4f}"
++    cm, cm0 = _marginal_diff(jl, ora), _marginal_diff(null, ora)
++    assert cm <= max(1.5 * cm0, MAX_ABS_DIFF), f"{shape}: per-cluster {cm:.4f} vs {cm0:.4f}"
++
++    swapped = _oracle_topologies_as_clustersets(
++        N.with_gammas(net, {h1: 0.45, h2: 0.15}), n_loci, seed=83)
++    cs = _marginal_diff(jl, swapped)
++    assert cs > 3 * max(cm0, MAX_ABS_DIFF), (
++        f"{shape}: swapping the gammas moved the marginals by only {cs:.4f} -- the comparison "
++        f"cannot tell the two hybrids apart, so its passing says nothing")
++    print(f"\n  6d {shape}: per-topology {md:.4f} (floor {md0:.4f}), per-cluster {cm:.4f} "
++          f"(floor {cm0:.4f}), gammas swapped {cs:.4f}")
++
++
++@requires_julia
++@pytest.mark.parametrize("sinks", [1, 2, 3])
++def test_6e_julia_matches_oracle_on_level3_blobs(sinks):
++    """Level-3 blobs, one per sink count: what the level-3 benchmark simulates (A64).
++
++    6d's design, one level up: a noise floor from two draws of the reference, and a gamma swap the
++    per-cluster marginals must detect.  n = 7 is the smallest n at which each stratum's blob
++    passes every gate, and it is 6d's n.
++    """
++    from opc.simulate import level3 as L3
++
++    layout = L3.Layout3(1, 0, (f"s{sinks}",))
++    net, _ = L3.build_level3(7, layout, seed=400 + sinks, cu=0.5)
++    assert L3.check3(net, layout)["ok"]
++    h1, h2, h3 = (r.hybrid for r in net.retics)
++    net = N.with_gammas(net, {h1: 0.15, h2: 0.45, h3: 0.3})
++
++    n_loci = 80_000
++    jl = _julia_topologies(net, n_loci, seed=91, cu=0.5, level=3)
++    ora = _oracle_topologies_as_clustersets(net, n_loci, seed=101)
++    null = _oracle_topologies_as_clustersets(net, n_loci, seed=102)
++    md, tv = _stats(jl, ora)
++    md0, tv0 = _stats(null, ora)
++    _record(f"julia vs oracle (level-3 s{sinks}, gamma 0.15/0.45/0.30)", md, tv, md0, tv0,
++            n_topologies=len(set(jl) | set(ora)), n_loci=n_loci)
++    assert md <= max(1.5 * md0, MAX_ABS_DIFF), f"s{sinks}: per-topology {md:.4f} vs {md0:.4f}"
++    assert tv <= max(1.5 * tv0, MAX_TV), f"s{sinks}: TV {tv:.4f} vs {tv0:.4f}"
++    cm, cm0 = _marginal_diff(jl, ora), _marginal_diff(null, ora)
++    assert cm <= max(1.5 * cm0, MAX_ABS_DIFF), f"s{sinks}: per-cluster {cm:.4f} vs {cm0:.4f}"
++
++    swapped = _oracle_topologies_as_clustersets(
++        N.with_gammas(net, {h1: 0.45, h2: 0.15, h3: 0.3}), n_loci, seed=103)
++    cs = _marginal_diff(jl, swapped)
++    assert cs > 3 * max(cm0, MAX_ABS_DIFF), (
++        f"s{sinks}: swapping two gammas moved the marginals by only {cs:.4f} -- the comparison "
++        f"cannot tell the hybrids apart, so its passing says nothing")
++    print(f"\n  6e s{sinks}: per-topology {md:.4f} (floor {md0:.4f}), per-cluster {cm:.4f} "
++          f"(floor {cm0:.4f}), gammas swapped {cs:.4f}")
++
++
+ @requires_julia
+ def test_julia_gates_reject_a_corrupted_network(tmp_path):
+     """The validation gates must actually fire.  Strip the gammas and the read must fail."""
+diff --git a/tests/test_seqsim.py b/tests/test_seqsim.py
+index 17161d5..46fbe2f 100644
+--- a/tests/test_seqsim.py
++++ b/tests/test_seqsim.py
+@@ -306,3 +306,51 @@ def test_the_recorded_probe_answers_match_this_build():
+     assert not p["p1b_partition_defects"]["indel_with_G4"]["ok"]
+     for tag in ("file", "shuffled"):
+         assert p["p2_partition_order"][tag]["order_preserved"]
++
++
++# --------------------------------------------------------------------- keeping alignments (A62)
++
++#: 24 Julia gene trees on an n=8 level-2 (S0) network, ``tests/data/l2_n8_s0.enewick``.  The
++#: cache-dependent tests above skip on ``main`` since ``results/full`` was pruned; this one does
++#: not depend on any cache.
++L2_FIXTURE = REPO / "tests" / "data" / "l2_n8_s0_24loci.nwk.gz"
++
++
++def _l2_job(tmp_path, tag, aln_dir):
++    return seqsim.EstJob(
++        cell_key="l2_n8_s0", n_taxa=8, cu=0.5, bp=300, chunk=0, start=0, count=24, cell_m=24,
++        per_batch=12, true_gz=L2_FIXTURE, out_dir=tmp_path / tag, seed_alisim=101,
++        seed_iqtree=202, model=seqsim.SeqModel(), scratch=tmp_path / "scratch", aln_dir=aln_dir)
++
++
++@requires_iqtree
++def test_keeping_alignments_adds_files_and_changes_nothing_else(tmp_path):
++    plain = _l2_job(tmp_path, "plain", None)
++    kept = _l2_job(tmp_path, "kept", tmp_path / "aln")
++    for job in (plain, kept):
++        assert seqsim.run_est_job(job)[1] == "ok"
++    # Compared decompressed: the tree files' gzip headers carry their write time, to the second,
++    # so two identical runs straddling a second boundary differ in bytes and nowhere else.  (The
++    # kept alignments are written with mtime=0, so *their* containers are reproducible.)
++    for name in ("rooted", "raw"):
++        assert gzip.decompress(getattr(plain, name).read_bytes()) == \
++            gzip.decompress(getattr(kept, name).read_bytes())
++    assert "aln_dir" not in json.loads(plain.sidecar.read_text())
++
++    alns = kept.aln_paths()
++    assert len(alns) == 24 and all(p.exists() for p in alns)
++    with gzip.open(alns[0], "rt") as fh:
++        rows = [r for r in fh.read().split("\n") if r.strip()]
++    n, width = map(int, rows[0].split())
++    assert n == 9 and {r.split()[0] for r in rows[1:]} == {f"t{i}" for i in range(1, 9)} | {"OUT"}
++    side = json.loads(kept.sidecar.read_text())
++    assert side["aln_dir"].endswith("l2_n8_s0")
++    assert side["aln_len_min"] <= width <= side["aln_len_max"]
++
++    # Cached on a second call; and a cell missing one alignment is not done, and is redone
++    # to the same bytes, because the seeds key off the global locus index.
++    before = [p.read_bytes() for p in alns]
++    assert seqsim.run_est_job(kept)[1] == "cached"
++    alns[3].unlink()
++    assert seqsim.run_est_job(kept)[1] == "ok"
++    assert [p.read_bytes() for p in alns] == before

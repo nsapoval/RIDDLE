@@ -1,0 +1,12 @@
+{
+ "stats": {
+  "cells": 80,
+  "rows": 80,
+  "ok": 80,
+  "c3_fail": 0,
+  "no_ha_fpr": 0,
+  "rung": "k_true",
+  "landed_csv": "/Users/nsapoval/research/rl-net-opt/results/rl/camus_a104_per_network_l2mix.csv"
+ },
+ "problems": []
+}

@@ -1,0 +1,5 @@
+dataset,cell,phase,rep,arm,stratum,n,cu,method,map_moved,cluster_f1,luay_norm_exact,ha_balanced_error,ha_fpr,ha_fnr,status
+l2reg_fill,l2reg_n200_rep07_est_bp1000,l2reg_n200,7,est_bp1000,cu=0.5,200,0.5,GNN,,0.980296,0.179245,0.503759,0.428571,0.578947,ok
+l2reg_fill,l2reg_n200_rep07_est_bp1000,l2reg_n200,7,est_bp1000,cu=0.5,200,0.5,GNN MAP [z+tc],1,0.980296,0.179245,0.503759,0.428571,0.578947,ok
+l2reg_fill,l2reg_n200_rep07_est_bp1000,l2reg_n200,7,est_bp1000,cu=0.5,200,0.5,BROOQS,,0.967901,0.103774,0.602444,0.678571,0.526316,ok
+l2reg_fill,l2reg_n200_rep07_est_bp1000,l2reg_n200,7,est_bp1000,cu=0.5,200,0.5,NetCS,,0.972705,0.0952381,0.263158,0,0.526316,ok

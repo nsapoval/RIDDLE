@@ -1,0 +1,28 @@
+{
+ "built": "2026-10-21T19:10:58-0500",
+ "family": "camus",
+ "conds": [
+  "p0.90_c24"
+ ],
+ "rows": 300,
+ "by_cond_method_status": {
+  "p0.90_c24|BROOQS|ok": 100,
+  "p0.90_c24|NetCS|ok": 85,
+  "p0.90_c24|NetCS|out_not_rootable": 15,
+  "p0.90_c24|ours/l2mix_pair/selF1 [relaxed L2]|ok": 100
+ },
+ "hybrid_ancestry": {
+  "networks": 300,
+  "agree": 300
+ },
+ "luay": {
+  "measured": 723,
+  "failed": 0
+ },
+ "stats": {
+  "control_tobs": 100
+ },
+ "gaps": [],
+ "problems": [],
+ "seconds": 8.9
+}

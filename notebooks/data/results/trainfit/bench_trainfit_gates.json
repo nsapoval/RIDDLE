@@ -1,0 +1,58 @@
+{
+ "variant": "z+tc",
+ "thr": 6.0,
+ "rho": 2,
+ "stats": {
+  "camus": {
+   "ha_scored": 160,
+   "b1_cluster_f1": 80,
+   "b1_luay_norm_exact": 80,
+   "b1_ha_balanced_error": 80,
+   "b3_cells": 50,
+   "cells": 80
+  },
+  "l2reg": {
+   "ha_scored": 38,
+   "b1_cluster_f1": 19,
+   "b1_luay_norm_exact": 19,
+   "b1_ha_balanced_error": 19,
+   "b3_cells": 11,
+   "cells": 19
+  },
+  "l3reg": {
+   "ha_scored": 40,
+   "b1_cluster_f1": 20,
+   "b1_luay_norm_exact": 20,
+   "b1_ha_balanced_error": 20,
+   "b3_cells": 6,
+   "cells": 20
+  },
+  "netcs": {
+   "ha_scored": 2366,
+   "b1_cluster_f1": 1183,
+   "b1_luay_norm_exact": 1183,
+   "b1_ha_balanced_error": 1183,
+   "b3_cells": 251,
+   "cells": 1183
+  }
+ },
+ "problems": [],
+ "sources": {
+  "camus": {
+   "landed_csv": "results/rl/camus_a104_per_network_l2mix.csv",
+   "sha256": "dc138bdb54ccf0c3ee2a7ee22b7d52893fa33ce71a2ae1b013804f1fecf89dee"
+  },
+  "l2reg": {
+   "landed_csv": "results/rl/l2reg_n200_v1_per_network.csv",
+   "sha256": "22fb038658439f418d1158c70845b484bf99070cab93051f97a4516090c12ed9"
+  },
+  "l3reg": {
+   "landed_csv": "results/rl/l3reg_n200_v1_per_network.csv",
+   "sha256": "0c62bd7c4350a2663c4f1acd7a932191964404dd5be714515fa4934a87aa5f7e"
+  },
+  "netcs": {
+   "landed_csv": "results/rl/netcs_bench_per_network.csv",
+   "sha256": "b74e4d2b51a64a4db680082840c2f185efbae87e2da590f37269195da2179a74"
+  }
+ }
+}

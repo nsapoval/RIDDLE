@@ -1,0 +1,61 @@
+{
+ "built": "2026-10-30T22:05:54-0400",
+ "partial": false,
+ "have": {
+  "score": 1650,
+  "cred": 1650,
+  "astral": 150
+ },
+ "want": {
+  "score": 1650,
+  "cred": 1650,
+  "astral": 150
+ },
+ "luay": {
+  "pairs": 6750,
+  "measured": 72,
+  "failed": 0
+ },
+ "gates": {
+  "C1": {
+   "ok": true,
+   "n": 0,
+   "first": []
+  },
+  "C2": {
+   "ok": true,
+   "n": 0,
+   "first": []
+  },
+  "C3": {
+   "ok": true,
+   "n": 0,
+   "first": []
+  },
+  "C4": {
+   "ok": true,
+   "n": 0,
+   "first": []
+  },
+  "C5": {
+   "ok": true,
+   "n": 0,
+   "first": []
+  },
+  "C6": {
+   "ok": true,
+   "n": 0,
+   "first": []
+  },
+  "C7": {
+   "ok": true,
+   "n": 0,
+   "first": []
+  },
+  "C8": {
+   "ok": true,
+   "n": 0,
+   "first": []
+  }
+ }
+}

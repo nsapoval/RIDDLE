@@ -1,0 +1,28 @@
+{
+ "dataset": "l3reg",
+ "bench_source": "/Users/nsapoval/research/rl-net-opt/nni_ensemble/results/l3reg_bench.csv",
+ "gnn_run": {
+  "run": "l3reg_eval/runs/gnn_t1_l2mix_pair_relaxedL3",
+  "host": "C4537CLFY0",
+  "jobs": 1
+ },
+ "calib": {
+  "pool": "sim",
+  "seconds": 2.6,
+  "cells": 138,
+  "per_cell": 0.01884057971014493
+ },
+ "addon_wall_inflation_vs_jobs1": null,
+ "stats": {
+  "r3_ok": 20,
+  "addon_clean": 20,
+  "r4_BROOQS_ok": 20,
+  "r4_NetCS_ok": 19,
+  "rows": 80,
+  "cells": 20
+ },
+ "problems": [],
+ "warnings": [],
+ "n_warnings": 0,
+ "built": "2026-10-21T10:25:04-0500"
+}

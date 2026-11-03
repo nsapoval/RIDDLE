@@ -1,0 +1,22 @@
+{
+ "variant": "z+tc",
+ "thr": 6.0,
+ "rho": 2,
+ "stats": {
+  "n1000": {
+   "ha_scored": 40,
+   "b1_cluster_f1": 20,
+   "b1_luay_norm_exact": 20,
+   "b1_ha_balanced_error": 20,
+   "b3_cells": 1,
+   "cells": 20
+  }
+ },
+ "problems": [],
+ "sources": {
+  "n1000": {
+   "landed_csv": "results/rl/l2_n1000_gt50k_v1_per_network.csv",
+   "sha256": "5e300800f71c5525381c9c68646be3e25cfa70c4f3b4a50326b0b330e09dc0f3"
+  }
+ }
+}

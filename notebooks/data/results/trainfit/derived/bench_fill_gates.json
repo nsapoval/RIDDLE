@@ -1,0 +1,33 @@
+{
+ "variant": "z+tc",
+ "thr": 6.0,
+ "rho": 2,
+ "stats": {
+  "l2reg_fill": {
+   "ha_scored": 2,
+   "b1_cluster_f1": 1,
+   "b1_luay_norm_exact": 1,
+   "b1_ha_balanced_error": 1,
+   "cells": 1
+  },
+  "netcs_fill": {
+   "ha_scored": 34,
+   "b1_cluster_f1": 17,
+   "b1_luay_norm_exact": 17,
+   "b1_ha_balanced_error": 17,
+   "b3_cells": 5,
+   "cells": 17
+  }
+ },
+ "problems": [],
+ "sources": {
+  "l2reg_fill": {
+   "landed_csv": "results/rl/l2reg_n200_v1_per_network.csv",
+   "sha256": "22fb038658439f418d1158c70845b484bf99070cab93051f97a4516090c12ed9"
+  },
+  "netcs_fill": {
+   "landed_csv": "results/rl/netcs_bench_per_network.csv",
+   "sha256": "b74e4d2b51a64a4db680082840c2f185efbae87e2da590f37269195da2179a74"
+  }
+ }
+}

@@ -1,0 +1,55 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 71e508a..9f39ba9 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.18)
+ project(tree_qmc LANGUAGES CXX)
+ 
+ # ---------- compiler & build ----------
+-set(CMAKE_CXX_STANDARD 20)
++# blob_cpu_v1: 20 -> 17, as the tob_qmc_v1 Linux build did.  Under C++20, libc++'s constexpr
++# vector instantiates MQLib's vector<QUBOSimpleSolution> on an incomplete type and clang refuses.
++set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ if(NOT CMAKE_BUILD_TYPE)
+   set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+diff --git a/src/csvparser.hpp b/src/csvparser.hpp
+index 28c88e8..c99e1b9 100644
+--- a/src/csvparser.hpp
++++ b/src/csvparser.hpp
+@@ -476,7 +476,7 @@ public:
+     {
+         std::string value;
+         FieldType key;
+-        int maxlen[fieldcount] = {0};
++        std::vector<int> maxlen(fieldcount, 0);  // blob_cpu_v1: was a VLA, which clang refuses
+         for (int i = 0; i < fieldcount; i++)
+         {
+             key = TrueFields[i].key;
+diff --git a/src/tree_of_blobs.cpp b/src/tree_of_blobs.cpp
+index b512b31..0ab4281 100644
+--- a/src/tree_of_blobs.cpp
++++ b/src/tree_of_blobs.cpp
+@@ -836,9 +836,19 @@ void SpeciesTree::pivot_scan(std::vector<Tree *> &gene_trees, Dict *dict, Node *
+                 multi_partitions_index_no_pivot.push_back(i);
+             }
+         }
+-        // random shuffle 
+-        std::random_shuffle(multi_partitions_index_no_pivot.begin(),
+-                multi_partitions_index_no_pivot.end());
++        // random shuffle
++        // blob_cpu_v1: libc++ no longer has std::random_shuffle.  This is libstdc++'s body for it
++        // (GCC 8.5, which built tob_qmc_v1; its RAND_MAX < INT_MAX branch is dead on glibc and
++        // macOS alike), so the shuffle draws from the same srand()-seeded rand() stream it did.
++        {
++            auto __first = multi_partitions_index_no_pivot.begin();
++            auto __last = multi_partitions_index_no_pivot.end();
++            if (__first != __last)
++                for (auto __i = __first + 1; __i != __last; ++__i) {
++                    auto __j = __first + (std::rand() % ((__i - __first) + 1));
++                    if (__i != __j) std::iter_swap(__i, __j);
++                }
++        }
+ 
+         // index_t partition_dmmy = multi_partitions_index_no_pivot[0];
+         

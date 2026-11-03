@@ -1,0 +1,22 @@
+{
+ "variant": "z+tc",
+ "thr": 6.0,
+ "rho": 2,
+ "stats": {
+  "netcs_tm_p0.90_c24": {
+   "ha_scored": 2400,
+   "b1_cluster_f1": 1200,
+   "b1_luay_norm_exact": 1200,
+   "b1_ha_balanced_error": 1200,
+   "b3_cells": 209,
+   "cells": 1200
+  }
+ },
+ "problems": [],
+ "sources": {
+  "netcs_tm_p0.90_c24": {
+   "landed_csv": "taxmiss_eval/results/netcs_taxmiss.csv",
+   "sha256": "abec16d773ed0beb425d27023a77a6ee15f68e0f01fd39bc2f44ed286b8f3250"
+  }
+ }
+}

@@ -1,0 +1,2131 @@
+{
+ "built": "2026-10-28T18:25:34-0500",
+ "dataset": "/Users/nsapoval/research/rl-net-opt/sptree_n200_gt10k_v1",
+ "phase": "sptree_n200",
+ "arm": "est_bp1000",
+ "sizes": {
+  "1k": {
+   "m": 1000,
+   "tau": 2
+  },
+  "5k": {
+   "m": 5000,
+   "tau": 10
+  },
+  "10k": {
+   "m": 10000,
+   "tau": 20
+  }
+ },
+ "missing_from_dataset": [
+  "README.md",
+  "MANIFEST.tsv",
+  "manifest.json",
+  "SHA256SUMS",
+  "code",
+  "tob_bp1000"
+ ],
+ "true_trees_present": 50,
+ "cells": [
+  {
+   "key": "n200_rep00_cu0.1",
+   "rep": 0,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 2.2617756676484304,
+   "median_internal_branch": 0.09999999999999998,
+   "rf_norm_mean": 0.18392020202020204,
+   "rf_norm_median": 0.1830848484848485,
+   "frac_root_split_correct": 0.8849,
+   "gap_fraction": 0.30158123346554455,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/00/true_net.nwk",
+    "trees": "inputs/n200/00/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "0532ea7ca6683b5734f9de1bca850e01749ad17d4223abb9e03b582b2960e7ff",
+     "trees": "d5110119330879f48079e09a449ce0929ad524aaaa6522ccbd69f417b8a5ae94"
+    },
+    "sources": {
+     "raw": "79949993f1ba0fb0b8b328e8b443305a5b039523ff33f2d7096b39d8b2aca3b0",
+     "nwk": "f42883230b123af7e72e91792cfa72a019b85cdfe82a97ae7085925f80862764",
+     "len": "e6ba9f8f01cf3d708e04f6b560a7e29c827d13b7bff56eb740c9e92fed281fae",
+     "enewick": "f1790d35713518772440b3ab1ab4ff891e30970ae45a85f97c3c8b830dca48ce"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "f64f931304902431f5463092b4763308338795962e1e21e277493ec55b06a29d",
+    "5k": "c7867a1108fb498aac23df678e647ba8131b80231940f2d43b341caf24b81940",
+    "10k": "d5110119330879f48079e09a449ce0929ad524aaaa6522ccbd69f417b8a5ae94"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep01_cu0.25",
+   "rep": 1,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 3.765036737863152,
+   "median_internal_branch": 0.25,
+   "rf_norm_mean": 0.0975929292929293,
+   "rf_norm_median": 0.09648737373737373,
+   "frac_root_split_correct": 0.8503,
+   "gap_fraction": 0.4497304426118104,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/01/true_net.nwk",
+    "trees": "inputs/n200/01/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "c5135950e80f05bcf612cceb3352a14e408eac28d1f33fb891a88655b0048cda",
+     "trees": "953d415ccb801d95d18ab3c67eea055672d2aa33977c50bcd4f65b5955a87ea8"
+    },
+    "sources": {
+     "raw": "80bcc474c89734ec293f79da33316b7b28b630a04960dd61a9234e67fe546aa4",
+     "nwk": "0030f0b7b1f97eb09b11698001735b68a488f7aea6c85aafc5f0266b97693255",
+     "len": "a37ebcb3f21724c5dca6462e09cbe3f63bf9e7cb67d7e47eab9e4bc6e0679b56",
+     "enewick": "fbb9c10854c9bf0eaf8df9dce0f54e556a15710b6c2198cf65c7d38a37c4cd8c"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "c137ab549e6197628332348279798331d9b369182c8afe045e910f225dff9773",
+    "5k": "53926858afa0d16ef73e27e0abecd839687651a19c7e4be6605b42c58e595d28",
+    "10k": "953d415ccb801d95d18ab3c67eea055672d2aa33977c50bcd4f65b5955a87ea8"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep02_cu0.5",
+   "rep": 2,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 11.00608665373907,
+   "median_internal_branch": 0.5000000000000009,
+   "rf_norm_mean": 0.07107373737373737,
+   "rf_norm_median": 0.07028484848484848,
+   "frac_root_split_correct": 0.8596,
+   "gap_fraction": 0.5895752229788954,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/02/true_net.nwk",
+    "trees": "inputs/n200/02/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "61cb200b77c92fb004d6e91cc6d6e0b16065f7d53bc587f845d25dc91472beca",
+     "trees": "2c2863e471ad9dc1527c2d82a9813fc70468c7201c5b4a54770464dbce2834b4"
+    },
+    "sources": {
+     "raw": "14c150dc434adcfe254693e508eed327e5f6140b6d3adf64e8c4a0c8514ef34f",
+     "nwk": "d5fbe6178c1870591183640bb63ae48e1959f01b51c2c644910396acb92fadc3",
+     "len": "0c3688df2f47b139523cb9ff8a3de5e37247a7c1d42b6613bf8f29835fd9dea5",
+     "enewick": "e876dbc0223359d80fbe272a3acc44cf9c587a8f35a9818766355a550132c315"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "e0a18cf000094143ee21cbb64f4271be0d0717c048363e3566962d281240a816",
+    "5k": "5354d76955fec46bb1954453ec276d3c4bdd8d0f103e8594af7e9d005febfa66",
+    "10k": "2c2863e471ad9dc1527c2d82a9813fc70468c7201c5b4a54770464dbce2834b4"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep03_cu0.1",
+   "rep": 3,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.2630532384319784,
+   "median_internal_branch": 0.10000000000000003,
+   "rf_norm_mean": 0.1739459595959596,
+   "rf_norm_median": 0.17338989898989898,
+   "frac_root_split_correct": 0.8859,
+   "gap_fraction": 0.3019561671244945,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/03/true_net.nwk",
+    "trees": "inputs/n200/03/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "584ffb932cf0a200d8bdc16412c5a70863eac97224606bfb03f3ddb096c99aa1",
+     "trees": "95623712bca18678a6b464452ba9a49d3d65e6facc33ee76f02a9d29b2b44c7f"
+    },
+    "sources": {
+     "raw": "4302bd1c293132fb77c8b56f1cbc3df6efd663750b4b74fa7ce1300d2ee5880b",
+     "nwk": "c2e0e2eac02c8218224ade4d33ec58049a8eedc19c9e5b15f679747adb23c271",
+     "len": "eafd1970c1b820f95a91bf261f1ab2045c6cde46836bc93a113b1b5be1ccf086",
+     "enewick": "3e175da5224e77b563d51e526d7dc93a59f23efe7ee2a1f805163b2deb73a49b"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "69c44eb5ebaad16f0b9d3f28411933d2a3fbd6206bb6c81f1882cd193e90a5e8",
+    "5k": "3ed2860914bfe37a8b6426f6c592f14ca0d33b1328d52aa86ce411fb270cd7c0",
+    "10k": "95623712bca18678a6b464452ba9a49d3d65e6facc33ee76f02a9d29b2b44c7f"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep04_cu0.25",
+   "rep": 4,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 3.9563042680571656,
+   "median_internal_branch": 0.25,
+   "rf_norm_mean": 0.10101868686868687,
+   "rf_norm_median": 0.10037676767676768,
+   "frac_root_split_correct": 0.8693,
+   "gap_fraction": 0.41988014585723593,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/04/true_net.nwk",
+    "trees": "inputs/n200/04/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "d57210cd12107d1145dbf6c232eec1bab7b76f0b52744b49bf0e0f0617d6f642",
+     "trees": "65a743038fe5f945d807c0f013762e58cfaa2c5ad27080f2d6d2cd1d6d45ae30"
+    },
+    "sources": {
+     "raw": "18f25a8ff7ed3d4a05b1cfc536b7e4b274c212c644ea11802cc1f2ed08a63c8f",
+     "nwk": "dae6c0abd8977bf44f8cfab627fd99e5a46064993ebcdba68601460c646d5045",
+     "len": "19ace48ede78931564f1d0ed5b494481afd53a04129c1ce23402a96954193de5",
+     "enewick": "24ce19a28215ac29525c7a198934ee921621604f4aa7693dd835677712112c79"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "8a12566a952588cf4c0763c3343446c60919a31ae817d57dae13d40e7acc99f2",
+    "5k": "efae440eebb33a1fca2bc57e20b104b60573457f9f84a9d5c51ccd94aa1c0895",
+    "10k": "65a743038fe5f945d807c0f013762e58cfaa2c5ad27080f2d6d2cd1d6d45ae30"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep05_cu0.1",
+   "rep": 5,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.3959550127766858,
+   "median_internal_branch": 0.10000000000000009,
+   "rf_norm_mean": 0.16819141414141414,
+   "rf_norm_median": 0.16749494949494947,
+   "frac_root_split_correct": 0.8908,
+   "gap_fraction": 0.30265350650192513,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/05/true_net.nwk",
+    "trees": "inputs/n200/05/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "76720c044820c7958a06977c452955fdaa595049e582e106a1cd9fd4670419df",
+     "trees": "009766930736286625e747de31b57c12a13d6eaed55e1eaefc3352dffcb1d501"
+    },
+    "sources": {
+     "raw": "732b38d8be824ac239e53e6ecaf054bbbe2853aea9f52c5f0d55324b645c0562",
+     "nwk": "bded9ddfdb7af61d05df981284ff0be6f19eb496542189320dc59a86ee49f31b",
+     "len": "958a6ad03ae0c821cb824bae49b1211e597bd0ef553300335690da8e6f988317",
+     "enewick": "2a112f0e04dccec2b8a6ee79829310eafd7fb3b35db0cd7d14d38f54ec302165"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "0a6e9a54c084485bbe71f32ea4988f4b94b3639fc738596db7362c8e93748643",
+    "5k": "54edbf2a73237718e0337cda2b2a2e98606893114395db570ebf254180fe283b",
+    "10k": "009766930736286625e747de31b57c12a13d6eaed55e1eaefc3352dffcb1d501"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep06_cu0.5",
+   "rep": 6,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 6.915427340710068,
+   "median_internal_branch": 0.5,
+   "rf_norm_mean": 0.07629848484848485,
+   "rf_norm_median": 0.0756520202020202,
+   "frac_root_split_correct": 0.8255,
+   "gap_fraction": 0.5390700581473529,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/06/true_net.nwk",
+    "trees": "inputs/n200/06/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "5c9c08a77f6f3dd891ba352008c0ffdaedd0f9da5a86d61e30044b7f01638880",
+     "trees": "37bf076eae4ac5f2a81173417e63069ed1af0d28d48e377808f2fcedbf9fb09c"
+    },
+    "sources": {
+     "raw": "a05cebcb6e8fc58e94e3f9a4c0fdb6d5805740075646757908af0120cb8821af",
+     "nwk": "c4ffd37c2682f21a09657e19690576956dd6116d423849dd9571f96485a13dde",
+     "len": "88c06cd6644a748a08ff5c4322c4c7f411507a3a3a8c42d011048a802a704be2",
+     "enewick": "d639e1c4727a4ba31e365ba197f6d2df43a95a0214af8bb8e557867f5e3d9cf4"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "4b629edf04f4ddd2a6164dcd2136f0a3a009567ca709113f0e05586fee3cdb2c",
+    "5k": "efe48736aa4b7a4c163934df6cde967452690a4cf1768587bd22e8c212f47976",
+    "10k": "37bf076eae4ac5f2a81173417e63069ed1af0d28d48e377808f2fcedbf9fb09c"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep07_cu0.1",
+   "rep": 7,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.462881004113842,
+   "median_internal_branch": 0.09999999999999998,
+   "rf_norm_mean": 0.17320555555555556,
+   "rf_norm_median": 0.17235050505050503,
+   "frac_root_split_correct": 0.8911,
+   "gap_fraction": 0.30211270676390256,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/07/true_net.nwk",
+    "trees": "inputs/n200/07/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "98ad1633148d985a37d630ef1a67dbb2a4227c224cd80efa50f6e34411a16db3",
+     "trees": "e2a67f89d5e7311456f52a4d039c4e8c290e3cb8fc5fa316d6cd9d2a1e3245b0"
+    },
+    "sources": {
+     "raw": "2e66ed489c85e67d5a885a50811bdbe8ddcb3129ef54731998e05342db389a00",
+     "nwk": "38f5acc4cb6d83f47ee904b599cfb25bc68ea5ebbd9879c5bbd168e5594888eb",
+     "len": "06ad2d4149c157ffee9895e09e1bf4662366cf8234cac850336194f7401f876d",
+     "enewick": "aea36d48ee16000de142ac31e33f1ef08c4520565b22b790023bb95efafc28e8"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "94f4833c2d4203a408f46ccebc0e956b2b16a11333d66333e6b32bc1a9e65072",
+    "5k": "5cf64e2cda123ffe6f620b3e7988040dfe4f1c20ea49163d04a392f6ac6563dd",
+    "10k": "e2a67f89d5e7311456f52a4d039c4e8c290e3cb8fc5fa316d6cd9d2a1e3245b0"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep08_cu0.25",
+   "rep": 8,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 4.870021861407639,
+   "median_internal_branch": 0.25,
+   "rf_norm_mean": 0.09632121212121213,
+   "rf_norm_median": 0.09555353535353535,
+   "frac_root_split_correct": 0.8524,
+   "gap_fraction": 0.43032718404465176,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/08/true_net.nwk",
+    "trees": "inputs/n200/08/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "7f80863c4a7cbd962f7090224cdb10f01f6245ee71cbfb1d2f9b21aadb701a0a",
+     "trees": "dbffa9b847e5e210fb56c05e4696f08df022d6f87d781a66c8930bb0370d0675"
+    },
+    "sources": {
+     "raw": "8a1419aa874ca32cb107c7cbb5cf6cae45226bd00daf0c95f9889b25bd128a0b",
+     "nwk": "3e15668d7c622aeb666d5ea00ed0dd497bc9f8b50d0366d76276c276edab152e",
+     "len": "c64956cc8ef9442e02d960803f60f31bafd6e7a2a80097d1db2be278ffc2722f",
+     "enewick": "c526296f141fb00ceeaca3c0cb11d2055a1f82f850b129bc03d83bb879fc348b"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "3adcca537c2d1e05c740325b76223df3e72a01a624e3edf2a6027f36a2d8a09e",
+    "5k": "8ab6ac3a468e4f8c8f80b9f34f72eb1fcd044e5c848e8616d255ab4be54c8744",
+    "10k": "dbffa9b847e5e210fb56c05e4696f08df022d6f87d781a66c8930bb0370d0675"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep09_cu0.5",
+   "rep": 9,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 7.942241846091092,
+   "median_internal_branch": 0.5,
+   "rf_norm_mean": 0.07290454545454544,
+   "rf_norm_median": 0.07186818181818182,
+   "frac_root_split_correct": 0.807,
+   "gap_fraction": 0.5728639577997405,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/09/true_net.nwk",
+    "trees": "inputs/n200/09/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "c7eb7b8a4b4b3d124409517a5c9448e066df683537247892550392def4726dbd",
+     "trees": "d11c75680576947117fb8d8b04bda1509eaa0cfff8023b9abd297b0cb47f50c5"
+    },
+    "sources": {
+     "raw": "c0c5f44a53aa54d298745666770f840098c6ff6a57d5f952fad90ecbab55273d",
+     "nwk": "e5e67ef5f0cbd338d18b179f7f0240df125ad125cd5e94a6051409e2be8aade5",
+     "len": "6cb497e1fac6ee8ed115239bdbc1d30124e4b15aec98576da2c7e3b5385c04aa",
+     "enewick": "936ad3c75b06433dd257efb575a115212900a423f53015a9fbb0ecea3181a9ef"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "66113c3b7d7f33eeecedbb00e62a0095d824136ff33c8593ecf7eaa26dc96739",
+    "5k": "43af0562e1579a55a497e3f9ef77cbcc54d9b18a9e07b0f52e912ec8229d97f8",
+    "10k": "d11c75680576947117fb8d8b04bda1509eaa0cfff8023b9abd297b0cb47f50c5"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep10_cu0.1",
+   "rep": 10,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.8065580836376889,
+   "median_internal_branch": 0.09999999999999998,
+   "rf_norm_mean": 0.16589343434343434,
+   "rf_norm_median": 0.16531060606060605,
+   "frac_root_split_correct": 0.886,
+   "gap_fraction": 0.3007415304055722,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/10/true_net.nwk",
+    "trees": "inputs/n200/10/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "623f8d3f8a015b9bf24913af8601b43fc973ccce8c1368bee8c5ef87180a6437",
+     "trees": "2a3408d48ef507d436eb5044b3ad0c4559d9f4940f7e4223748befc97483019d"
+    },
+    "sources": {
+     "raw": "cb4b7e1828f27db04a3a9d1db2bec5bb4ebce3979b0f71657fb61d759f941a48",
+     "nwk": "e1ed6d6aee16888a503e1634761f3b28829eb93e2119dacee4115eda312abd17",
+     "len": "e4b5c5215cf7f48796aa07c30f748f3789b486b5a088f15b041ee5c867f73445",
+     "enewick": "398409c843d4d3fccc940034c8d99ecaf83b3d23519a5722ec9b6e8667a05a0e"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "8c3b169e6888201ae8efc7229d2471216c9e9eb1fc209015b1997a2aaab5f5b4",
+    "5k": "7a6fd8908f18edb334138a6f440fcc51a36fcac96ba5f8afe3c8e2cfe43e788a",
+    "10k": "2a3408d48ef507d436eb5044b3ad0c4559d9f4940f7e4223748befc97483019d"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep11_cu0.25",
+   "rep": 11,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 6.660701236956399,
+   "median_internal_branch": 0.25,
+   "rf_norm_mean": 0.09416565656565656,
+   "rf_norm_median": 0.09312575757575757,
+   "frac_root_split_correct": 0.8707,
+   "gap_fraction": 0.44852450268736355,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/11/true_net.nwk",
+    "trees": "inputs/n200/11/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "5504a8b4362ae0ce0808e9828d53c9ad7cfd0a0722227ec4b0cbbdb33089650e",
+     "trees": "bed4e79f25ddb86c952d9248ad0a7ea2964366c55e6c61080c85cbe01059d7c0"
+    },
+    "sources": {
+     "raw": "b3769afbca5e5ccb17e4a4266f35f585cc7ff4eda33b6889c59ded7900559cdc",
+     "nwk": "096af53e241765dbc96dc241c26b0278bb9005be9a5527d099eedf1caa6600e3",
+     "len": "979f71ac191b1378b4f0e94c8a6675ad3df01cea7097ef1b2d0f4a80d24e9efe",
+     "enewick": "5cf1f3ccf7c02c1d087f6d495a1a5926941aae31fadbe094788a10501d15e2fd"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "364979b166259e8be68f6c6792c7b2dcfd2874c22fbc949f5533cb2becf038fc",
+    "5k": "fcdcbf9c7355b873f2a59cea487b6b223b561eea51100a62eb25345e95747ae1",
+    "10k": "bed4e79f25ddb86c952d9248ad0a7ea2964366c55e6c61080c85cbe01059d7c0"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep12_cu0.5",
+   "rep": 12,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 6.983432558189265,
+   "median_internal_branch": 0.5,
+   "rf_norm_mean": 0.07402777777777779,
+   "rf_norm_median": 0.07332979797979798,
+   "frac_root_split_correct": 0.8202,
+   "gap_fraction": 0.5839365787085374,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/12/true_net.nwk",
+    "trees": "inputs/n200/12/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "86d1d04d5315ffde670aaf36d74ea85acdcc59e92b36a674c924f2ff2472aaff",
+     "trees": "1e0bfc390ebca8cf74a67890c9b61b84cefc5d43d6d51eba1c278c8d27d539ea"
+    },
+    "sources": {
+     "raw": "5bd502783bfb2abc927a5640f02bbc8156693cb74b61347ff4ccac89835ae306",
+     "nwk": "ab3715c2336e687db3cbfb73494d389adcf6eba003bbd6b897848e5d073fe3fb",
+     "len": "2029764acfd85df4f210435b0b0b17e4bff37ce3dcc99e11f38a88bdfef763eb",
+     "enewick": "6342cb3f88a255b806a278a9651b9bfce03c63bc5c816cb95d928dc613eba0e0"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "16cc8ca932a353f5ba511685e524f2bb34da4d167a1566ce01a43c182885494d",
+    "5k": "b0fc4a0b6cab977ab28b95f518dda7baca6225fdb49ef0e0d6a910e1cf84eaee",
+    "10k": "1e0bfc390ebca8cf74a67890c9b61b84cefc5d43d6d51eba1c278c8d27d539ea"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep13_cu0.1",
+   "rep": 13,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.7315464832956495,
+   "median_internal_branch": 0.10000000000000009,
+   "rf_norm_mean": 0.17017878787878787,
+   "rf_norm_median": 0.16939494949494946,
+   "frac_root_split_correct": 0.887,
+   "gap_fraction": 0.2994897045412885,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/13/true_net.nwk",
+    "trees": "inputs/n200/13/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "53c43368e9a7ccaa8fd87da806095207c9f186a3ab63a4e74dc2b0e6ef822caa",
+     "trees": "308fe31a23ce9a5244f05f6c21302e8f827c248c7eea44184021b7b4ea530494"
+    },
+    "sources": {
+     "raw": "61394d7b753158fc75853433094308e9564f663f5244ca6925eef8cd603a2bb5",
+     "nwk": "8aafcc03a65efbbfc7be29f68c8fc5663cbb4974f8bb4ee8a5db4027e6820ac1",
+     "len": "e011e8e164093f47ed9adbc8c73988f3038e20707dc53849c3b3c3861f1777ae",
+     "enewick": "9b2c00b47cda52ab6d9bc1e55db33ca4be43f93238981b0a6f982630848f3bc9"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "ddbe9890266ad709e3c8d3f50ed206c420f8a590b6d8ed8d55758e12c805fea6",
+    "5k": "71ab4bbf4f662a560d9f27ecdccb0d0c68d2e334fe68ec343ed421903e71cf27",
+    "10k": "308fe31a23ce9a5244f05f6c21302e8f827c248c7eea44184021b7b4ea530494"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep14_cu0.25",
+   "rep": 14,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 5.323665779608232,
+   "median_internal_branch": 0.25,
+   "rf_norm_mean": 0.10182222222222223,
+   "rf_norm_median": 0.10058787878787878,
+   "frac_root_split_correct": 0.9097,
+   "gap_fraction": 0.4376251956328589,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/14/true_net.nwk",
+    "trees": "inputs/n200/14/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "cecb087c17481220419b089ebd2f6c8bf653cf7a25d21b4589aa85e13aa4cd30",
+     "trees": "4927803b8cab4d2350046b09b06af09d94633275d81c35bd9969a585e9dcd47d"
+    },
+    "sources": {
+     "raw": "f0b3446f63029d82212abf26f4dfd126d6fbb07f5b0ddfafd2303fc19c5659cd",
+     "nwk": "787acfa9141762e6f2cc03ac7f48069f386b1311647354951706d4f6a91ecc9c",
+     "len": "7c172a7c53da9a849c9712a8af1e132b364ef7eed9afe20b9ee5f17eb90ff75b",
+     "enewick": "e340bd70bf22e5b309c5288b9662421104ec5a6c4a8da7ccf10136db04929074"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "07c0936660bfac3f0f21ec56ea63ebc3fabf7b9b2f306a8a90ad0396e8f60f0a",
+    "5k": "f0aaf101e71e469d2946f64f84e33a4013f86f3b66dc9d244822a81ca3516d60",
+    "10k": "4927803b8cab4d2350046b09b06af09d94633275d81c35bd9969a585e9dcd47d"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep15_cu0.1",
+   "rep": 15,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.6935545560344156,
+   "median_internal_branch": 0.10000000000000009,
+   "rf_norm_mean": 0.15159545454545456,
+   "rf_norm_median": 0.15077626262626262,
+   "frac_root_split_correct": 0.8783,
+   "gap_fraction": 0.29790242349908064,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/15/true_net.nwk",
+    "trees": "inputs/n200/15/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "3e050c4c840aa2c220ff8fc2151ac67173c6603157c3a75b922edf4e6f2383a7",
+     "trees": "a8b9227a34f352a208ab3946355576b4664616f4451e97ef7d994ba82ff1fb7e"
+    },
+    "sources": {
+     "raw": "c38d9ee4bb20c0423733b6afed45cd7d0036ae71b071a7a5d9237851cd12c971",
+     "nwk": "e828fc82517319977867ebd3d9cd8b7593163a9ff2431a7a2270be7f5ab85d4a",
+     "len": "74f07059c152aa2cd1b9f7589ac3fce29c0b0a676e62a50be58bf72e21a36fb8",
+     "enewick": "12c89bd59cb7af34f7810cf229d163a4b3ca563af0f922e4dd4801d0de2b0343"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "4e4ca84730a010d2fc8edc31424c66deb4ddc59940256eb488040d0d2f77ab05",
+    "5k": "434e8103ec7a72435da4317a53023f298d84ee9e61703a3353321637625f3020",
+    "10k": "a8b9227a34f352a208ab3946355576b4664616f4451e97ef7d994ba82ff1fb7e"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep16_cu0.5",
+   "rep": 16,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 8.048494220232143,
+   "median_internal_branch": 0.5000000000000002,
+   "rf_norm_mean": 0.06846363636363637,
+   "rf_norm_median": 0.06745101010101011,
+   "frac_root_split_correct": 0.8403,
+   "gap_fraction": 0.5560400646561331,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/16/true_net.nwk",
+    "trees": "inputs/n200/16/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "a7ee02d3b279c5dbb6cb1783d2c80c1009be979d12b8732cf7924ec9bc49d941",
+     "trees": "393efb8abe45f75dbc7caecab1e87970a651f9f5a4e4e986d69d8f8bdb3960ec"
+    },
+    "sources": {
+     "raw": "260568823a26082455868817711dba665cd61c9880c7624d95052605b28bb627",
+     "nwk": "b8e0f27b35bce7740a7d144194cd39e842f710a0fe554da62004d659d89f22c8",
+     "len": "323a7fba3d27dbe543edab3429855c47c845dc4e9a87b58d6253fc539065870c",
+     "enewick": "da26dae1765d2c350dec9491f5bfed80fb22ef98ed3546ae87d80a5e22e4f1dc"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "671e2387165d920544b072d7ce5255ce785fa141ef9679a9cbfad24dc16650d0",
+    "5k": "7816e0e51c8520d6aceb46801496187404805b7c9630a0ed14937e254f1ac5a6",
+    "10k": "393efb8abe45f75dbc7caecab1e87970a651f9f5a4e4e986d69d8f8bdb3960ec"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep17_cu0.1",
+   "rep": 17,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.5085805238343717,
+   "median_internal_branch": 0.09999999999999998,
+   "rf_norm_mean": 0.20484848484848486,
+   "rf_norm_median": 0.20432626262626263,
+   "frac_root_split_correct": 0.889,
+   "gap_fraction": 0.2735643033964828,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/17/true_net.nwk",
+    "trees": "inputs/n200/17/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "4e075944d030903bb2b87442ff729051aab4b31ec8e5f0bdf8d9b322f8b326cc",
+     "trees": "d0a8f2f09d1cdc49527e2857e54e19dfeaf808582e5cd2ba4dbc999b7473fe04"
+    },
+    "sources": {
+     "raw": "c5a50aefb3184505287a754ecb9d686ea747dcc0744c227a9412590b013e10a6",
+     "nwk": "63608b4b5256d654ffc7f810496bb8af6bc9c0471d512ab3179aa1d931021d83",
+     "len": "299160183fa5c07dc326525ad7cb38398df7c967851987a792b42318c64b1f5f",
+     "enewick": "ac0b12a20022883143a9f68647ae727508bae805a3a374536c3b921b71e8f4fd"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "5307966f2aae236b1b5b701db2ee931ba41d96775ef990d49d449fd9816abb3a",
+    "5k": "dc1d8ee178b997422adb01a08d83d8e6057e15de126c7978cff87b65306cbfb1",
+    "10k": "d0a8f2f09d1cdc49527e2857e54e19dfeaf808582e5cd2ba4dbc999b7473fe04"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep18_cu0.25",
+   "rep": 18,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 5.338091485500354,
+   "median_internal_branch": 0.25,
+   "rf_norm_mean": 0.10470858585858586,
+   "rf_norm_median": 0.10437171717171718,
+   "frac_root_split_correct": 0.8573,
+   "gap_fraction": 0.43809593790969903,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/18/true_net.nwk",
+    "trees": "inputs/n200/18/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "af860f78d693304e61301a9f32b6b08755a72a350c309e6e30f997fa6ae52e89",
+     "trees": "087f75e0c5c126af33520a7f37226ae99202f7862dff8d64be972b588cabf680"
+    },
+    "sources": {
+     "raw": "b3534d31143771d5c66450c667e974a7aea3713b0d46253828d2e62210f54c08",
+     "nwk": "96975eac6d5f43ac3bff273af44af5a9817cdee10694b60afd010eb7386815e9",
+     "len": "cc508d4e7062037957e80f5ee1e5ec7b98777855614d7a45246cddce53cac22d",
+     "enewick": "b05f6bc04d0703991c1c21da1aefeaa4cb058e0ba39eefcb2bc779d47fee5e0d"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "0c6757d0d9b2f47c58634da00d54c67809b93477d2a525e688777715a56d53b2",
+    "5k": "78350eb410c1bbad78a4d6c723e4e4923131a678a69efb86e3f0216665f93c67",
+    "10k": "087f75e0c5c126af33520a7f37226ae99202f7862dff8d64be972b588cabf680"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep19_cu0.5",
+   "rep": 19,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 9.065207886410041,
+   "median_internal_branch": 0.5000000000000002,
+   "rf_norm_mean": 0.07392626262626263,
+   "rf_norm_median": 0.07259090909090908,
+   "frac_root_split_correct": 0.7932,
+   "gap_fraction": 0.581293845991139,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/19/true_net.nwk",
+    "trees": "inputs/n200/19/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "1626f1fc56be630f2c5a7146fb961733561fd4de310f3b79ad7daca793e9b7ec",
+     "trees": "c6b6e4e51b8ba3fc4af931f27d0616f924920003cb18411abe24e97448904ba4"
+    },
+    "sources": {
+     "raw": "0ab5be181ebbf0a868b6cbb93f727e8ea40c43f649af746ec9f52cfaa3e151e4",
+     "nwk": "f5640d77f89571e15f5bb96ac9dcbe218282173d2bb068fd79d79ddc65970d92",
+     "len": "a3f32108cbeba05f989be4567b2c107b058f405130b2a71dace164af7c103e48",
+     "enewick": "0fd45a78ad3973da5e72dbc32155095f5c5b4a88218f2810809ec35569f9f94c"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "0e46a10b6be701f777a619670229979200fb03686d04fb8aa9f2a72548e4b4a5",
+    "5k": "b436d7c3801fa694d1201c9290243e39ffadac8706cd61365212ab5c170e1fd5",
+    "10k": "c6b6e4e51b8ba3fc4af931f27d0616f924920003cb18411abe24e97448904ba4"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep20_cu0.1",
+   "rep": 20,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 2.069756833615695,
+   "median_internal_branch": 0.10000000000000009,
+   "rf_norm_mean": 0.16690151515151516,
+   "rf_norm_median": 0.16594393939393937,
+   "frac_root_split_correct": 0.8893,
+   "gap_fraction": 0.2969001073792879,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/20/true_net.nwk",
+    "trees": "inputs/n200/20/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "aef4737bf87feb3ba5ae6c9095ba451bc773b968719f932e4e65828d444f766b",
+     "trees": "c3931511f13daa1fa0404ad900773f9c31c566e16c305b4105b25a3af71090eb"
+    },
+    "sources": {
+     "raw": "36d2296ffbbe03ffab1bc07ee7b3dd50a6c3ae2ff2e0abfedada1575e57bf427",
+     "nwk": "f9cbab7ecd62da89d76c88dfb90f7f146bc42c970f76b2881ba8190502a66b88",
+     "len": "6be94e87be2b0e7b8ef452080bb05105061f5594c599f277b522cecb22ad1ca7",
+     "enewick": "297acf1759eb571c99f3b56b4f0914c4017ffda9b77de7461ff413721c2db451"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "466aa43e22bf169f354939e95c65453232ed35f6a25fefbc5d984b8ef49c47d2",
+    "5k": "58bc3e56ef55de3b7f55597ba7ba5715d7cf0b9f55bb7d5ee727f02ff4260aa2",
+    "10k": "c3931511f13daa1fa0404ad900773f9c31c566e16c305b4105b25a3af71090eb"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep21_cu0.25",
+   "rep": 21,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 4.3627949097930285,
+   "median_internal_branch": 0.24999999999999978,
+   "rf_norm_mean": 0.10181818181818182,
+   "rf_norm_median": 0.10092070707070706,
+   "frac_root_split_correct": 0.8565,
+   "gap_fraction": 0.43817545597175117,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/21/true_net.nwk",
+    "trees": "inputs/n200/21/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "78dcc67d225e9182d0de486910d50449dcea47769d2d373a44907df656ae3d6f",
+     "trees": "5a3521721260d3e3343126e9e38bc3075470bb40f00802456a5c121265b854cd"
+    },
+    "sources": {
+     "raw": "99bfad601cf5637f98eef99ced39b9ec5928958fbaceea68072002550401a575",
+     "nwk": "a8c11810cffc97c62a99e28951ca80dba34500fbd43d4cfa06e13ca520d6540e",
+     "len": "7963a985a53fe50d8c9309e162d56627954f24813af99e1caf7ea9c905eefc53",
+     "enewick": "332cdc6ad09fcb9b5ef31e24fd610196a1859f854bfae2fca1748527ed855590"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "fa78a07e044fcd09249c3b5ff39df36f8076c2438c81d0466a008fb0eb982f57",
+    "5k": "513c89331c41c2f7d928f4ea1a3c496d27f46bb00fc8fb5e7f0a76b1a8c4f3a2",
+    "10k": "5a3521721260d3e3343126e9e38bc3075470bb40f00802456a5c121265b854cd"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep22_cu0.5",
+   "rep": 22,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 8.121469764544011,
+   "median_internal_branch": 0.5,
+   "rf_norm_mean": 0.07500252525252525,
+   "rf_norm_median": 0.07427979797979797,
+   "frac_root_split_correct": 0.7748,
+   "gap_fraction": 0.5759917161169893,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/22/true_net.nwk",
+    "trees": "inputs/n200/22/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "24fe35334d3a71a9aa469addc64e1eceb672c09a6be26f1c2986f7c68cdd906d",
+     "trees": "78c3d0a117cb61a1fe14311f21b1d574d0066890d9f8ecfe527df4dedf297308"
+    },
+    "sources": {
+     "raw": "c746db972163c4d2a4745e35b6880ad9b3bc2f12e59659d724b99824aed72bc2",
+     "nwk": "0c95115eee7cb98851f588758eb35ca42152aa1975224e1e9882e336164f0733",
+     "len": "d6a148c03b4027b32d65a2d832c817319e4a20f0e7c545892f0a20c853586bc0",
+     "enewick": "1045ca5a95e8e53827647c4875e1d0ac65dba38087c4c17b8140dc539da8ddb8"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "bdb4a77c75b120deddbc305dc2120a265e56dffef03222c383627cb1adffac4a",
+    "5k": "3a46d28f8a6275dc056ec6383f2670a3c0112fe992684f9f14ec42cb3fe25c11",
+    "10k": "78c3d0a117cb61a1fe14311f21b1d574d0066890d9f8ecfe527df4dedf297308"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep23_cu0.1",
+   "rep": 23,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.8227802031570994,
+   "median_internal_branch": 0.10000000000000009,
+   "rf_norm_mean": 0.15057828282828284,
+   "rf_norm_median": 0.15003737373737375,
+   "frac_root_split_correct": 0.8771,
+   "gap_fraction": 0.3162192935957782,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/23/true_net.nwk",
+    "trees": "inputs/n200/23/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "5ad62914f2e2548901bebd266d11fe07906853fa98f2a64d9bb692a5971a0fda",
+     "trees": "f97acdba8d346106de3da9ddc0d924eb7751476f3bd8cfaeff76b4e7efe02e4c"
+    },
+    "sources": {
+     "raw": "5731e1e60e466ab309047bce437b4d937f948d5b9ae2c56419f5d46b7c29475f",
+     "nwk": "17fc0b671b5241589cec12167b24db141378946e0eee39282f04e97d3135672c",
+     "len": "46a6cb75aa737edde98e8541eb43de54813e979c2a88938fbb1f9a148253ebe1",
+     "enewick": "6658d23e3c44f34946d7f1879a3df9c8ccb264462ecfb01f2b989a7f869c5a6e"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "f4eae14da9f85f44dfba4e611853ed36c56574b70b8da96b79a8dbdbc8306fb8",
+    "5k": "a1382faa5530960d76ea2552b1a840aa2f6769a3f9e3e93a47256d66f2d8caa5",
+    "10k": "f97acdba8d346106de3da9ddc0d924eb7751476f3bd8cfaeff76b4e7efe02e4c"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep24_cu0.25",
+   "rep": 24,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 7.1466673079250524,
+   "median_internal_branch": 0.25000000000000044,
+   "rf_norm_mean": 0.10523636363636363,
+   "rf_norm_median": 0.10468838383838383,
+   "frac_root_split_correct": 0.8584,
+   "gap_fraction": 0.45765252600835654,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/24/true_net.nwk",
+    "trees": "inputs/n200/24/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "eeaec2fc5d0ca6f1b3aff3b7b44540b46117bf0017646b6b37023b2474c3f128",
+     "trees": "ec3fa734a2a3d4e3f13df58ac57cc75b06a7aa2ffad9744ad04ef701e7289649"
+    },
+    "sources": {
+     "raw": "6a4fe8b540629bf0299e57e9b78ca048bb3f9313041ceb33cde00f7a09239feb",
+     "nwk": "9e14e80e21bb1c8a67894beae6e85f3e8d9f072839c94d2940c127c28a583d01",
+     "len": "761e134e3a0891363e5d3dbbdbf810bd61c9a89fc163ba8a048cd75cc45c681a",
+     "enewick": "c57de04f9c63439ab7ba1f51f06c6970b0f06ebc7566e829d95d1d1ddab96c36"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "32283e32cd0752cb5582ebb39b14a115a97c522e09e3ce2bbd6c21f1058f43dc",
+    "5k": "553e00dc0dd3e90c4cf8e05d715b6d1214c4d84faa772f63534de5ce7b44d18a",
+    "10k": "ec3fa734a2a3d4e3f13df58ac57cc75b06a7aa2ffad9744ad04ef701e7289649"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep25_cu0.1",
+   "rep": 25,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.5877767422454454,
+   "median_internal_branch": 0.10000000000000009,
+   "rf_norm_mean": 0.1765621212121212,
+   "rf_norm_median": 0.1757121212121212,
+   "frac_root_split_correct": 0.8919,
+   "gap_fraction": 0.3001762076231286,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/25/true_net.nwk",
+    "trees": "inputs/n200/25/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "b541496628be25e49ce151ee231d3623ef56de4a294a1198cf2cbb90a2b75298",
+     "trees": "9a120a33a81a51c300aa754fff69a109f4d011b1cb5a84d7e9c11ad7709823ab"
+    },
+    "sources": {
+     "raw": "aa0deb8cf6a4fab119442133d9557748608adc45ab9036b90d2c36568be691fa",
+     "nwk": "04fff95873e3408c47932f4acfabd228c587ac0782916af8bd8b76006534f306",
+     "len": "f347d039218358a6c42a8a7d1c8f8e67a41f1561ae48cfc6f0af221ddeebe9da",
+     "enewick": "08c22680de3147acc1e0c5902a7b1b6fcd60b9f791aa4817484caaa819a88992"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "50b97e6351a60cc38932a0b6388c7357d7af1a260306215001bb0a5bc4806b0f",
+    "5k": "702258af97737d352b5d4a767bb2c090401ca93a112095a61323f974f8a8e428",
+    "10k": "9a120a33a81a51c300aa754fff69a109f4d011b1cb5a84d7e9c11ad7709823ab"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep26_cu0.5",
+   "rep": 26,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 8.114925550058409,
+   "median_internal_branch": 0.5,
+   "rf_norm_mean": 0.0709510101010101,
+   "rf_norm_median": 0.07017929292929292,
+   "frac_root_split_correct": 0.8016,
+   "gap_fraction": 0.5667117529711267,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/26/true_net.nwk",
+    "trees": "inputs/n200/26/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "8a7ddcdbfb87c83630abcab02b8be66321fafdd90925d84ad6a2467c6dddf578",
+     "trees": "ad4a75ad1269c405226401d7c7b6059bb59d5f9fecc0ef9e3bf926b07777e949"
+    },
+    "sources": {
+     "raw": "cfbd072f8bf3cd1cf5d11dd8e8eb8f76da311962b63e0612f6c9ce023ac069b2",
+     "nwk": "26405eddfc692a80f2a5273f76e0040ab08829e69515f57173be6079d6497938",
+     "len": "6e17341aa873ceefd1f07019c0002209fd8b94ec45ba697584cd4f6f782518d8",
+     "enewick": "ef8e3408aea4cabcd5d2bfc54c1db48d4a1ad736e60a2c141a35f4a85e48d7e1"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "02d7121fa5522a196db4c92e7fadc3ddfac35af938883ff488ef12cd10581eba",
+    "5k": "e85ffa1c21c8638e67b4a8132aa4e379ae3372171285b1e6a6677deba2d32ad4",
+    "10k": "ad4a75ad1269c405226401d7c7b6059bb59d5f9fecc0ef9e3bf926b07777e949"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep27_cu0.1",
+   "rep": 27,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 2.322270464924688,
+   "median_internal_branch": 0.10000000000000009,
+   "rf_norm_mean": 0.16825454545454546,
+   "rf_norm_median": 0.16687777777777776,
+   "frac_root_split_correct": 0.8822,
+   "gap_fraction": 0.30579754513639734,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/27/true_net.nwk",
+    "trees": "inputs/n200/27/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "ea349c30dd838d725f964e55d1bf2d7beb93eba39f69a4df2d5a82fbfb18c70a",
+     "trees": "65b308c91c2b0afb4d04925edb985231cd06c0e1b9b4b880a58449eac086dfae"
+    },
+    "sources": {
+     "raw": "92b0003452502447383099d13c00cc280864be5fb7c030a1dc24dab1cb2aad32",
+     "nwk": "ab6dabb688e5589a7f73ba937988c4c994ee4630b1dacc1aefa36f08cbcf171c",
+     "len": "8c2d1f0df8cfc887b59cbbe1ceb78df3405806b61f9004a7c49c79897cfceea4",
+     "enewick": "0a76a20f45f79459223fb36f2331f9459a0c3884ecc84a0f6d0f231890801527"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "f4c037a0c80fc36f309d0ed296f29a0cc81453d58c39e2e07eb4e3e26c1b2f8f",
+    "5k": "3a17b24205f83689fc120832e8cf33b76643d682d127d0120226cc415ffff4b5",
+    "10k": "65b308c91c2b0afb4d04925edb985231cd06c0e1b9b4b880a58449eac086dfae"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep28_cu0.25",
+   "rep": 28,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 10.714472235152826,
+   "median_internal_branch": 0.25,
+   "rf_norm_mean": 0.0932570707070707,
+   "rf_norm_median": 0.09249242424242424,
+   "frac_root_split_correct": 0.811,
+   "gap_fraction": 0.48674394119907877,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/28/true_net.nwk",
+    "trees": "inputs/n200/28/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "ebf68d0610e4e30521cac13337955c8c4bd6a527143a61b29eed500ff99c8688",
+     "trees": "bd0f7a70dd0fc301c6148d5ac0a231c05de519dfae173bbd98d023062ee43156"
+    },
+    "sources": {
+     "raw": "f6e76d23238d455a492d882f0f4d26f874d25f6d99c1e4138fdb24f5a3644a96",
+     "nwk": "48ae3117b268f2132c95c1a77668c084b2fa1fa787fe8e7c08886089da2852a8",
+     "len": "e0cdfa80c8ecadc1b44dd55fb60e754afc3e93ba755630edea588f847fb6c0ab",
+     "enewick": "0c8aab4334490d44fd16253c663fd0fbb1348dde4134c4d0e025f359baf765ae"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "03df9081a9142ae79c5567216404e715da1a2a5c8880abe05982a862780dde91",
+    "5k": "a808e774ebaa87591416d2f6ab615737f39cbe27275d065fea6623b042c64d58",
+    "10k": "bd0f7a70dd0fc301c6148d5ac0a231c05de519dfae173bbd98d023062ee43156"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep29_cu0.5",
+   "rep": 29,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 7.457341859462766,
+   "median_internal_branch": 0.5000000000000004,
+   "rf_norm_mean": 0.0751929292929293,
+   "rf_norm_median": 0.07366262626262626,
+   "frac_root_split_correct": 0.8147,
+   "gap_fraction": 0.5648237884754627,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/29/true_net.nwk",
+    "trees": "inputs/n200/29/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "ef6acc420105f90f299fa806d2faaf307e331fb33c58881578cb9c922176c441",
+     "trees": "c3f49240a0b2788813029ae9de5b1147dd7e70b3ced60d10c5b56d323cb98914"
+    },
+    "sources": {
+     "raw": "e0aa53cac6c60f6155854ce760d643c7556d7d43bbbdbdb8623dfe33d533c7bb",
+     "nwk": "37def38139d9d98c6eaea00167bb3f98bac0987cb34a38573afb002d67add4f8",
+     "len": "60f70d90bd2fdd8aab7301136f8fc60529ddc2b8d2de81082f88f06e8cc4f28d",
+     "enewick": "d57830bd33a413e22e13f90e55040e81041b569d4b8f3a1246a8a2fabb48c998"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "8b3a438b06036c97636536b820616af40bdce054ee441648e4e507018cd103f8",
+    "5k": "660fcc8615ae7c70a228cdf730130eaa5405e191d1596151545941e45c3b4132",
+    "10k": "c3f49240a0b2788813029ae9de5b1147dd7e70b3ced60d10c5b56d323cb98914"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep30_cu0.1",
+   "rep": 30,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.67627979100973,
+   "median_internal_branch": 0.10000000000000009,
+   "rf_norm_mean": 0.18275858585858587,
+   "rf_norm_median": 0.18202929292929293,
+   "frac_root_split_correct": 0.8855,
+   "gap_fraction": 0.2882508686727396,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/30/true_net.nwk",
+    "trees": "inputs/n200/30/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "1e538d2b7fab1f67e54f8e049a79e0d655a570ddf2393486b68d2ed2c069dadf",
+     "trees": "4afa6f299b843c9232d9aeb697cc42b8a4dfde8f10f42c079dca413805e32290"
+    },
+    "sources": {
+     "raw": "6d0867fa9233073dd841e24c057633415f8d7303acd2669ce5e8bd25647e54f3",
+     "nwk": "05f56d92bcfdbf8f78e014c4055f540beeab7af39cf48862a2ce1531fbb61a0d",
+     "len": "915f1f1795cca3cbbbc1a6e0ec539ce935d645ed018b1c4ce5d4046a980003f1",
+     "enewick": "9d8ebbda721dae251e834ff6b16874f9ff4c1dcce1cb7b82e9b1709f236ad5fe"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "5756300d13c3c0d350378a116be4ef1d48e3b5e80453d753c3b8f932ed7b9c08",
+    "5k": "3f08c1ea0e30cc01b9a8b16869ba5d1825d1b20ffda0d2376c038c548eaab6da",
+    "10k": "4afa6f299b843c9232d9aeb697cc42b8a4dfde8f10f42c079dca413805e32290"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep31_cu0.25",
+   "rep": 31,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 4.7177668526465055,
+   "median_internal_branch": 0.25,
+   "rf_norm_mean": 0.09825959595959596,
+   "rf_norm_median": 0.09763232323232322,
+   "frac_root_split_correct": 0.859,
+   "gap_fraction": 0.43852834312401445,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/31/true_net.nwk",
+    "trees": "inputs/n200/31/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "9baf1798c54928aba53d96f3d1845e6d9f87222d5a9c4439f60537a5c90114ea",
+     "trees": "5978c5bf7e93447ea5313b0aa535d043ae04fd69a5ed476a93dd91266e3d7ebd"
+    },
+    "sources": {
+     "raw": "cfce239e514df1c37a9bcfb010f05ce05cbac7bcce260cedef106cc9445b9344",
+     "nwk": "d3e0ffc35a3519acab7bdac1665b84038537c6c9c765b602bd581f59d6aa1b04",
+     "len": "5550bddbbed842b983bf75488f4b4494e1810d87290237c02683459bb2bf4149",
+     "enewick": "07ec882db9c67350c990fa4b1ec7e7b5c493c95df4491f4c0c9d7d760c472a7e"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "ac866ab95b06bb3bd8814465043e23f091b44cbcf9a035547543814c33a17577",
+    "5k": "f58a7c669b8f1a5afac39a0c37a7995400e26b350f559d55aec5b4e58e950a52",
+    "10k": "5978c5bf7e93447ea5313b0aa535d043ae04fd69a5ed476a93dd91266e3d7ebd"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep32_cu0.5",
+   "rep": 32,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 6.901157233867719,
+   "median_internal_branch": 0.5,
+   "rf_norm_mean": 0.07270252525252525,
+   "rf_norm_median": 0.07186818181818182,
+   "frac_root_split_correct": 0.8661,
+   "gap_fraction": 0.5603249838067591,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/32/true_net.nwk",
+    "trees": "inputs/n200/32/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "053c1e7494ef8a6c56c791a537398aa53882a254028fdb13998532531a558336",
+     "trees": "1a4afa809507596c9f0c743551afc9505174b07b355a1dbebe58f05ca07744dd"
+    },
+    "sources": {
+     "raw": "0910fe144ad6ba04fe666c960bbc33cf7cb5ad9eb1f452deffaa4885133c4487",
+     "nwk": "4838403c9b1a3161a45cb0daab7b2dae460191098cea52a78563ecad6d3bba7e",
+     "len": "3b7a1faa46748d0e8afb09c67ec0a8afc1fb3a4e058de67af73c1f6fed22d525",
+     "enewick": "d05ef828cd2d77a1cff48ddb8fdee475664166cf29a4153ad72b37a8b4230399"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "c0edad183bab48692a740f9d57495fae1cfd9b08c2dc61d1c78aedfea5419631",
+    "5k": "4fad78ed9e71f6b11bd7516d3ea8196e71491a8e6678021101a51cf6a8593d38",
+    "10k": "1a4afa809507596c9f0c743551afc9505174b07b355a1dbebe58f05ca07744dd"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep33_cu0.1",
+   "rep": 33,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.6821796117141352,
+   "median_internal_branch": 0.09999999999999998,
+   "rf_norm_mean": 0.18027575757575756,
+   "rf_norm_median": 0.179089898989899,
+   "frac_root_split_correct": 0.8807,
+   "gap_fraction": 0.3025324468925532,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/33/true_net.nwk",
+    "trees": "inputs/n200/33/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "b026755f0bc65a74188c7772c85547e321f8a443d60dff52725c1200fb593cb5",
+     "trees": "f1e76ce5976aa8d9f4f98439ddd3fa39d7cdc05fa71fd4f55606577ecdb2fefa"
+    },
+    "sources": {
+     "raw": "c413df7ea9b18cf5bd7ee01fd4cf63f8d098a5dda9f8515100ced51737e33d2c",
+     "nwk": "e497cd0446bb7dd0ebe2b7ad84db6c58ce3624abec59218301e76bcd11b5e410",
+     "len": "117ae51df01014ccb17b83dc5419694d7de5ff7d79836a6113c21a07005d61a6",
+     "enewick": "2de0d0f0a85e66cf257ccd6c8ad19449c24357abab77011c80b7d713b8a08e42"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "ce2c432dca83a47ac6b04474aa1f7c4c401defd1912d524bd4a925297d7d1912",
+    "5k": "65fc2660c87389420faa122e3fa3048fb48c6d76cefd3282d3d09bd34c2ba522",
+    "10k": "f1e76ce5976aa8d9f4f98439ddd3fa39d7cdc05fa71fd4f55606577ecdb2fefa"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep34_cu0.25",
+   "rep": 34,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 5.314398870836469,
+   "median_internal_branch": 0.2500000000000002,
+   "rf_norm_mean": 0.09897777777777779,
+   "rf_norm_median": 0.09763232323232322,
+   "frac_root_split_correct": 0.8515,
+   "gap_fraction": 0.43957758606449393,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/34/true_net.nwk",
+    "trees": "inputs/n200/34/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "00ba19da5a09e5eda49bdaa556c1cd330eda5f1b924f82214e9248c2e7afc2bc",
+     "trees": "8cc6e803798b3ae5791cae3fc619e076ef0dde200b1645c58904ade9322e0207"
+    },
+    "sources": {
+     "raw": "c65e0b1c665b1e1e01efc5c2e85fcbf0de4d5bf7751ef61e74b124e3d11fa743",
+     "nwk": "780b419ce610a8a5ea29444c1b0338b8562118a7fff58aeb960fbbe18b00b620",
+     "len": "0095796a9a731287a23f6d9c44a36ce58264613f18be73bb34818ab33c81a11f",
+     "enewick": "7b3584a507198251eb3b271455b070ef1387495d335f7c3053a063e68bb4206f"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "6af2a9d2c03842fe555fc9ca26dc7e2c9587fa69def379f4cd06d1d9fd622d07",
+    "5k": "893c2c6086b17a844b3caf14b1ac6ac89065c1f6de4f56b4b2a300dba5da9f24",
+    "10k": "8cc6e803798b3ae5791cae3fc619e076ef0dde200b1645c58904ade9322e0207"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep35_cu0.1",
+   "rep": 35,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.3046888211171483,
+   "median_internal_branch": 0.09999999999999998,
+   "rf_norm_mean": 0.17412777777777777,
+   "rf_norm_median": 0.17330050505050504,
+   "frac_root_split_correct": 0.8842,
+   "gap_fraction": 0.29769362099002067,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/35/true_net.nwk",
+    "trees": "inputs/n200/35/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "bf148bd759c2ec5d0598f944cd8c2692cf690e049139e9f30226b94a14b8645c",
+     "trees": "807ec0f3c7474544b68e48af20022264aa8a4c8a5da61f4dd0dbfd917ed4498f"
+    },
+    "sources": {
+     "raw": "11ed54a5018fbfa506aaf236878f00df22a4c5cddce7453031c689899f093e6f",
+     "nwk": "88e5f8c60ffb699acc6b2874594246b7194a14a3519eb45a91ea88950254c85c",
+     "len": "8e5bc37f24a3c5e52051ee1989467ea9dd718555649110fdebce0afb083ae02a",
+     "enewick": "ba0eb202e628b1acc912266cbede6b0acde671e823f4fa27ebbf41eee0bf7b99"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "121b92d4ab1d0223a597f104e3db0de46a99db963aafa3bd09b0600d7af82560",
+    "5k": "7ba771f2a9e02ab5e4414573d43a97fed9f21eca8e9f0c0f14457e85f5e08086",
+    "10k": "807ec0f3c7474544b68e48af20022264aa8a4c8a5da61f4dd0dbfd917ed4498f"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep36_cu0.5",
+   "rep": 36,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 10.336030146859102,
+   "median_internal_branch": 0.5,
+   "rf_norm_mean": 0.07507626262626263,
+   "rf_norm_median": 0.07459646464646465,
+   "frac_root_split_correct": 0.823,
+   "gap_fraction": 0.549096073573154,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/36/true_net.nwk",
+    "trees": "inputs/n200/36/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "c9316ddca63f85d4978853017868747aeb052426080ab4d76dacba3a94433753",
+     "trees": "cc987ed2fb9f3cdb4a8c189779a443c3793dad0720b319ec7a7fabc28b4846ce"
+    },
+    "sources": {
+     "raw": "96cbbff01c01905650945da8c9dc390216606787bc2161c25cb78ec5341aa02d",
+     "nwk": "19425276669194473288dedf4294d31f5afd9a3212026d7f199885aebef5e24a",
+     "len": "ec418d2bf908a600265fc752020af825d7c1f3bd6909dd4018e0439b6e7c693d",
+     "enewick": "2ecdb4d64e42d94477fbd3dac234cac1f57e0cfab804d86b9c4962b771475026"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "300d9a05c1d84cb6c6fc27a10a4ca906efadfdae07d46a4c495c6ac02961d04e",
+    "5k": "849d3c4b553a327ac81b82a273bf711bd5ae463ba93b00449d512060176fe632",
+    "10k": "cc987ed2fb9f3cdb4a8c189779a443c3793dad0720b319ec7a7fabc28b4846ce"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep37_cu0.1",
+   "rep": 37,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.6348764375746896,
+   "median_internal_branch": 0.10000000000000009,
+   "rf_norm_mean": 0.166329797979798,
+   "rf_norm_median": 0.16550555555555554,
+   "frac_root_split_correct": 0.8841,
+   "gap_fraction": 0.30444098762835387,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/37/true_net.nwk",
+    "trees": "inputs/n200/37/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "49847ccff2cf86e3d603470140a07e7d76a5971af62d63e0f6db8e2f1975c1bb",
+     "trees": "332790b3ef90d900270eaa0b78202afae6fd84c92c0a10f966950e49ef5b0e35"
+    },
+    "sources": {
+     "raw": "32ae1cdae7d28fdbc08e7652647b0c0df45f71950ad5ac97d81917f0e25e226a",
+     "nwk": "9142feea08cbedb46cbe2559c3d21295d67adad55785d70b1d57251fc5c21a90",
+     "len": "b5e32c953c421516b2cceb6349ec7f7d837c4e800662c7f2d9ba6db84f24f1d5",
+     "enewick": "713eb6cae0bbb317a6879449814154f157f6b98f40ac2e01163b0d245ecd6383"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "625fa43411a075913475463325c60f2622454549fbb996b014e552cd558cb155",
+    "5k": "d97322a5827302a423cc1b1bede3272556070c4d5b70ca0981a112ad1b1d07e3",
+    "10k": "332790b3ef90d900270eaa0b78202afae6fd84c92c0a10f966950e49ef5b0e35"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep38_cu0.25",
+   "rep": 38,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 3.7847122707872143,
+   "median_internal_branch": 0.25,
+   "rf_norm_mean": 0.1015419191919192,
+   "rf_norm_median": 0.10090454545454546,
+   "frac_root_split_correct": 0.8641,
+   "gap_fraction": 0.43129593087779816,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/38/true_net.nwk",
+    "trees": "inputs/n200/38/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "7cbbff2db527ac2eb3afcf9c4f3bb69159a50f267569bff253c1c3eb4badeb5f",
+     "trees": "47c32307c287720a85dd297a0b68e179ebd6f969f2e240356531ca3c406cf1e0"
+    },
+    "sources": {
+     "raw": "efc394073a343796c90531e9404d3ca699f40b001838d24eb32faefe29476354",
+     "nwk": "f7d109dc7e1c38ed430e50ca25ff8ff6c4ebff6a953a2f1e88d72164262e52cb",
+     "len": "f3d3cada59ddf55ea5d14ee21f940f46fb8c5017e86392be085a3a1732169731",
+     "enewick": "aeaa2079724b8ff26a9f0d05b76dd746b1cad0317913e5616db80f9f3a56ab4a"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "39f7d10bcc31134c4bbd5ba28b9342be0b1eb06bd20abea2807e50b3e9fac0de",
+    "5k": "57ba7aa20e641fed9885185a872aa3868972700d14b20a4cc8b0c417a32ac494",
+    "10k": "47c32307c287720a85dd297a0b68e179ebd6f969f2e240356531ca3c406cf1e0"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep39_cu0.5",
+   "rep": 39,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 9.943317811089242,
+   "median_internal_branch": 0.49999999999999956,
+   "rf_norm_mean": 0.06985757575757576,
+   "rf_norm_median": 0.06903434343434343,
+   "frac_root_split_correct": 0.8212,
+   "gap_fraction": 0.5527392175040935,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/39/true_net.nwk",
+    "trees": "inputs/n200/39/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "afc064ac72e5d424191af644b516aaa9e2b014ecd06aaea738af458cd8e6d4a3",
+     "trees": "779076d5a633148f9194309ff6a1911fc1c4bc7ef1138dd56727935c2929d066"
+    },
+    "sources": {
+     "raw": "d0f95f27927eab917395b3152bc6e30fa98c080c4b1aa1042d1a522202c7ff78",
+     "nwk": "29fb7741208f00950a2797fe08711665bde04874646761105ae65acdadba0cd6",
+     "len": "858cea6a6149c4ae44c7f695cf3f39a63c0353f8b75b7cc5a1a5bfdc407570cf",
+     "enewick": "1b1f9d8b4a0bdadd41a6c1b109d1ea5742f8b78c7dd63831004bd7ca8de3ac4f"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "956f843aa876b93d625aa89f25a53704f575452157e494d5f48aea0390cd9f8f",
+    "5k": "f95752eb4c9f8945340bedaaef2c07966e7e0f27110a54a7e6e59c78d57cd82b",
+    "10k": "779076d5a633148f9194309ff6a1911fc1c4bc7ef1138dd56727935c2929d066"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep40_cu0.1",
+   "rep": 40,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 2.2671013112055802,
+   "median_internal_branch": 0.09999999999999964,
+   "rf_norm_mean": 0.16668989898989897,
+   "rf_norm_median": 0.16612272727272726,
+   "frac_root_split_correct": 0.8854,
+   "gap_fraction": 0.29445465738604126,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/40/true_net.nwk",
+    "trees": "inputs/n200/40/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "56629e768480e7bd3d02c874de61a203e1f94d2ad27a5ec4c122220de926c271",
+     "trees": "3692d564f54dc9de620b7f3c06801c078c288a0705bc8e520ddfb74e6df65938"
+    },
+    "sources": {
+     "raw": "84daaaf825f3b82ddc597622aea28c406a051b7082d2eb5d20496239b66d7e8f",
+     "nwk": "0244ecafe816e6a741a4b0b165461d1d3d5067514a3d61c1a9badaccedfe8701",
+     "len": "cf0d37ef2cab3969e747591ab0a2760f0a01e30d48d0246a2a92d64da7cd4d69",
+     "enewick": "57809a38ba1def5d56934eaa908c747a37dfc19a98db578f992c327b8e5dc8ce"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "62111987e7b364077e90f1cdd917a3a4ab88c515077a8612a97672b8e35ac3f4",
+    "5k": "b37a9d4a6feb93d863b23b8f367d192e7817db8129299409a8a6b6c79a81f44c",
+    "10k": "3692d564f54dc9de620b7f3c06801c078c288a0705bc8e520ddfb74e6df65938"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep41_cu0.25",
+   "rep": 41,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 5.210812181614994,
+   "median_internal_branch": 0.25,
+   "rf_norm_mean": 0.09628838383838384,
+   "rf_norm_median": 0.09532626262626262,
+   "frac_root_split_correct": 0.8537,
+   "gap_fraction": 0.4282792075120653,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/41/true_net.nwk",
+    "trees": "inputs/n200/41/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "7fac9dddec12644e4eca26d330d62ad7e4d635ca58ff4af4608b77cf5cc7f269",
+     "trees": "6f15294cfeb026af17e4ee78b2e539ba55715235a111ca30308b006e8606fae8"
+    },
+    "sources": {
+     "raw": "f606477b933dea4370557a70cb78a283d5314afd36361ed8d2180208b9e123b6",
+     "nwk": "986d393b90eb54caf16ec203ca467032336be0fab63020f1417f6b4c6794c493",
+     "len": "61b10cf4c1596986d2e145166a59295eb4e6ec6f0f108403cdf49d8114d6b926",
+     "enewick": "89663cee0189c0b88f8db96416dd12317a9f2e9bae1d8d4aa2f1b43ae31d0206"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "8d1898b2c0e852b1ee8b32649815cc9e9e84cc524061419ab4a9619691499e27",
+    "5k": "740e4711b5e18ac1b25d081d4f4e83ac2c5401ab9f27f17b4d32769ea0db5cdf",
+    "10k": "6f15294cfeb026af17e4ee78b2e539ba55715235a111ca30308b006e8606fae8"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep42_cu0.5",
+   "rep": 42,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 9.99697805147665,
+   "median_internal_branch": 0.5,
+   "rf_norm_mean": 0.07331060606060606,
+   "rf_norm_median": 0.07207929292929292,
+   "frac_root_split_correct": 0.8084,
+   "gap_fraction": 0.5678021516458951,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/42/true_net.nwk",
+    "trees": "inputs/n200/42/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "7c6d91718d02353a36465ca3d8cfd5ea723facc320122a631398fdae9dc819bd",
+     "trees": "e96349275b72686af5d175cf1c78798e77f2dc666cbdd0fef23b31f7bd81613a"
+    },
+    "sources": {
+     "raw": "ef70e92d423c4661d7a6e8de502c77cb73e7f9ceb9df2911e354d111cbfe29a2",
+     "nwk": "cbe839350432039166b4520f588c5999887f570f832e42a8c1891a17a59b4b74",
+     "len": "27e3435db5889d8507a0b4ef14f8abbe330e92d9d17af64c47673cff5e7a9470",
+     "enewick": "3062c11de0b97c06d404a4670d98cceccff188f3dc6f1ac66cdda4798723eab9"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "78eef7a68a24bb64239af64cc4f3a5075a638defc3f29fa40d8f6e2a9f922858",
+    "5k": "f867ce27852cf69e295d25165f1a1fbb4447ef845d042d556ae7f83707c86385",
+    "10k": "e96349275b72686af5d175cf1c78798e77f2dc666cbdd0fef23b31f7bd81613a"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep43_cu0.1",
+   "rep": 43,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 2.0754961804298775,
+   "median_internal_branch": 0.10000000000000009,
+   "rf_norm_mean": 0.18509242424242425,
+   "rf_norm_median": 0.18433535353535355,
+   "frac_root_split_correct": 0.8898,
+   "gap_fraction": 0.298856291339078,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/43/true_net.nwk",
+    "trees": "inputs/n200/43/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "3a3d1e6fecafb83e640edc48b29f434e840d3b5f669d604fb0237a9df44c7b16",
+     "trees": "6d37d446162f93f04f7ff4516ebeae19fb6f0890cb75c74adb42263ef938aed6"
+    },
+    "sources": {
+     "raw": "c9cf9f4f877a6667bbbd61178c677a99348cdf696c253c90921de1db1e15353b",
+     "nwk": "59f22a7a15709b87a5c413793f187becd75ce186e32dcca7e19a781b38224af5",
+     "len": "4afd48b02e2caa035ab947728f73cb527fd60fc10d835bee46d6b2a30ba1ca50",
+     "enewick": "47309e8437b3523b6a6418ba72104d0f79f019f0f220f8cb57dbcc97abd23b30"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "7ad61648f627dc8c11654d80a885e6dfe8965e969943d4ee59bad802adbc7799",
+    "5k": "6dde9c605c793e8b8176236412b8d131d125b503e6ce09b8809e7a3a417f8618",
+    "10k": "6d37d446162f93f04f7ff4516ebeae19fb6f0890cb75c74adb42263ef938aed6"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep44_cu0.25",
+   "rep": 44,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 3.624564898910478,
+   "median_internal_branch": 0.25,
+   "rf_norm_mean": 0.09701262626262626,
+   "rf_norm_median": 0.0960651515151515,
+   "frac_root_split_correct": 0.8529,
+   "gap_fraction": 0.4573449412260344,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/44/true_net.nwk",
+    "trees": "inputs/n200/44/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "3252833d726f5796848b0812ade279faa925c9c7e262f9c0c875f5d18556332a",
+     "trees": "43eeba27211194b13be56861e3f65961c1615875af7c3dfd7dd874cd94abdaeb"
+    },
+    "sources": {
+     "raw": "385edc121dccecfdf05e27bce81e2c6d200a464c5692a8407930cf0d74577bb7",
+     "nwk": "8a27b1a6e984a3419062b8eb32b87a5fe181940c848cb3a98373d05a341c795d",
+     "len": "f7a9b442cc7a52be96b7de825310f110edd3bfb6fcb0d257acbe97339aedf81b",
+     "enewick": "529fd88eacd54685be6cdebdb31c9e617097a5aec66a8d13df540becead14f9f"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "2d8f1e49ffbc6e95b2ddd919c688632e94edf40260ad87beb1a0d0269851cd3c",
+    "5k": "b84893fbbabc38a07492236db467cd2a2fc8704bee7c196b54224a4dc71f6d0b",
+    "10k": "43eeba27211194b13be56861e3f65961c1615875af7c3dfd7dd874cd94abdaeb"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep45_cu0.1",
+   "rep": 45,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.8687228944951375,
+   "median_internal_branch": 0.09999999999999998,
+   "rf_norm_mean": 0.1611560606060606,
+   "rf_norm_median": 0.16034949494949494,
+   "frac_root_split_correct": 0.8784,
+   "gap_fraction": 0.3050476763393968,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/45/true_net.nwk",
+    "trees": "inputs/n200/45/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "33c901c1bc9685a4db7e6aeb5dd1009629dda5f402783fb5e9862ffa46a5bac9",
+     "trees": "4104cd473bc359f6392683a1ec4a98d596b53b7dca50bfa73706ee06640d57ea"
+    },
+    "sources": {
+     "raw": "fdfada957624926779a2efd9ea918bb82231a2326c8dd04ad4d9ac812d15f6d2",
+     "nwk": "f76af0cdefb4eee406d2fce2154e672c22535a7d2d7072fa42d1dc2a520e068b",
+     "len": "caedb2a0b9463c7caf67cfc6a4e6af3f61b08ad34c90003f14e808f3de84e2fc",
+     "enewick": "d45c389e425629a437d1b78dbb13cf17206a3654ab158d342cc7ac1a07bd2ee6"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "ee448a7efe7d500a4ca5fc9b83e3961c05a5240db4143979b9e6bfca7a05ae8a",
+    "5k": "8543d7d75a079c9002013b2362e86384ef95cdcd7178898280dbc6765260ec1d",
+    "10k": "4104cd473bc359f6392683a1ec4a98d596b53b7dca50bfa73706ee06640d57ea"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep46_cu0.5",
+   "rep": 46,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 9.386920038315488,
+   "median_internal_branch": 0.49999999999999956,
+   "rf_norm_mean": 0.07446717171717172,
+   "rf_norm_median": 0.07322424242424243,
+   "frac_root_split_correct": 0.8135,
+   "gap_fraction": 0.5404369147278845,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/46/true_net.nwk",
+    "trees": "inputs/n200/46/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "3d36588e0c8a7f1223b67ba11763f35c65cf9a50185cd57aeef809b3ce1cd89c",
+     "trees": "f377399ece7441594e428383c428861bbe44ff02ac0c3b8f7a804dc569d67ebf"
+    },
+    "sources": {
+     "raw": "0bc37271e6dd4bc8037b71eda895e0f1c8b38f064d1f1ee13a4fc06cca9c1035",
+     "nwk": "5aa0a6568728f0ab682179229cf05c0277f9d30b36723023044476cc5ba7bada",
+     "len": "19039e14a8f4cb74fa93a2c80c92d67eaab297b8f580dbe7304f6bf657cadc30",
+     "enewick": "3018b41e2de865b8dc5bb12b799c83620e8060ff2efc226b43010a8b61b03cfd"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "92ed53bc142a106f520db2ee328fe1c60ffe916359d3d6ce0f9ce4498c8d24d4",
+    "5k": "847eb8078e4340ed686816ce8c44d03b3084919c1e0cdb925067fcba4d3ce13d",
+    "10k": "f377399ece7441594e428383c428861bbe44ff02ac0c3b8f7a804dc569d67ebf"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep47_cu0.1",
+   "rep": 47,
+   "cu": 0.1,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 1.3244549723441346,
+   "median_internal_branch": 0.10000000000000003,
+   "rf_norm_mean": 0.17075707070707072,
+   "rf_norm_median": 0.16950050505050504,
+   "frac_root_split_correct": 0.8833,
+   "gap_fraction": 0.28602325919019617,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/47/true_net.nwk",
+    "trees": "inputs/n200/47/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "cd975ba2d3f91c2164ec99f2dc9329b7c0ec1942be1aed7c044ca164553bb4d8",
+     "trees": "e0919f03df7cf2f8b4faa2c9d5b87ba1aadf5c357b21045e06bef445fe306a7e"
+    },
+    "sources": {
+     "raw": "f0a4ab79b7379360792f14036f687ebea331b71e947b1485ec398c00c2d8f06f",
+     "nwk": "f6278225b62a0a200b67303abf8ee19cea1448c3699f17dc2451e03ead6aef09",
+     "len": "0c3c732ed59dace57adb5ce30d41209312df0007e8fcce17669138741fccd2a5",
+     "enewick": "5541696a4d1a8f829c4749391aa38dbbbab65815e3a789b39a7f77ea2a1bdec7"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "7eaff561697b1fec74bb1b9d2dbafd3b2f61430d5e597d549d400f22a7c78e40",
+    "5k": "85a091284caa20dfa9bae4be4793321f7299722e1a9d494010f5af3c2741b4d6",
+    "10k": "e0919f03df7cf2f8b4faa2c9d5b87ba1aadf5c357b21045e06bef445fe306a7e"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep48_cu0.25",
+   "rep": 48,
+   "cu": 0.25,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 5.35178190271765,
+   "median_internal_branch": 0.25,
+   "rf_norm_mean": 0.10408838383838383,
+   "rf_norm_median": 0.10312121212121213,
+   "frac_root_split_correct": 0.9024,
+   "gap_fraction": 0.4273704746273501,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/48/true_net.nwk",
+    "trees": "inputs/n200/48/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "162e08cdb7cbdc7f7e680b8bfa7efd81a6fe59d483082430f005d83dd2a90051",
+     "trees": "1dfeccf5ee3f5df1767df0795431bf019a992742aa21653d9e06e2455fd78ac1"
+    },
+    "sources": {
+     "raw": "20bc0fe668b5ebcb87472ac241e48067d2181e58caf95c95834f0014697c86d8",
+     "nwk": "cba4a6446cca36d513c908e1bd5854ee02192d81351dd5a6d0f04ab0edc93c01",
+     "len": "7120b30f22b433a3f4b8727921256e502052453660493a1f983a3f55feeb6002",
+     "enewick": "712cc89004813a1936f113ec430ba8a4146ad92baf295967b79f6a83561d0099"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "08e5edaef5a69e966f0832f71a56a140cdf113dd745af84d0ea88cba89a15e1d",
+    "5k": "507925557d6ac1bf54b937bc756fb78092bd9780e2621a7e6b042738e18fb336",
+    "10k": "1dfeccf5ee3f5df1767df0795431bf019a992742aa21653d9e06e2455fd78ac1"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  },
+  {
+   "key": "n200_rep49_cu0.5",
+   "rep": 49,
+   "cu": 0.5,
+   "k": 0,
+   "n_loci": 10000,
+   "n_nodes": 399,
+   "n_true_clusters": 198,
+   "root_height": 9.560233352540827,
+   "median_internal_branch": 0.5,
+   "rf_norm_mean": 0.07338232323232323,
+   "rf_norm_median": 0.07218484848484849,
+   "frac_root_split_correct": 0.7661,
+   "gap_fraction": 0.5852528320359094,
+   "iqtree_model_used": "HKY+F+G4",
+   "n_root_polytomy": 0,
+   "files": {
+    "true_net.nwk": "inputs/n200/49/true_net.nwk",
+    "trees": "inputs/n200/49/est_bp1000.nwk"
+   },
+   "sha256": {
+    "staged": {
+     "true_net.nwk": "e1fcdbfb106c091c48fc2737b5073a873f167f34fe77a5533ae1be2b63b6c704",
+     "trees": "3bf31d1cfc6f1658fba6c7ae3e7d071e91d8f49101a5e40c5498b3063f1aac80"
+    },
+    "sources": {
+     "raw": "dee1bd5db5b99d09daf6953b73a1343316769c54d5fb8984c06c7a5f6f49d8c7",
+     "nwk": "65199270fbbd8a7d93ffc37d78ddeba14d8ab93ce0cefa011926fd71df7fc150",
+     "len": "6a1a6ffeb22ce65e662fb7f55e13b631bd057ec6f670b745b2a1109f75b8565f",
+     "enewick": "658f5ae2e0fbc32850a1f36d2adb1ccaf031091051820bee2353193e96ae86e2"
+    }
+   },
+   "prefix_sha256": {
+    "1k": "8c8a75197cd25ed1f06051ccc297ae56059fbc6e113f687ecdd5dedca4b80840",
+    "5k": "8d4df2bb1a65686ce5f8d6c2a64b6111f62e817f51b3be7e7873ac7e4f4528c7",
+    "10k": "3bf31d1cfc6f1658fba6c7ae3e7d071e91d8f49101a5e40c5498b3063f1aac80"
+   },
+   "xcheck": {
+    "len_string_identical": 10000,
+    "topology_identical": 10000
+   }
+  }
+ ]
+}

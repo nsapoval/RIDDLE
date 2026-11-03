@@ -1,0 +1,58 @@
+{
+ "variant": "z+tc",
+ "thr": 6.0,
+ "rho": 2,
+ "stats": {
+  "l2reg_gt5k": {
+   "ha_scored": 40,
+   "b1_cluster_f1": 20,
+   "b1_luay_norm_exact": 20,
+   "b1_ha_balanced_error": 20,
+   "b3_cells": 8,
+   "cells": 20
+  },
+  "l2reg_gt10k": {
+   "ha_scored": 40,
+   "b1_cluster_f1": 20,
+   "b1_luay_norm_exact": 20,
+   "b1_ha_balanced_error": 20,
+   "b3_cells": 15,
+   "cells": 20
+  },
+  "l3reg_gt5k": {
+   "ha_scored": 40,
+   "b1_cluster_f1": 20,
+   "b1_luay_norm_exact": 20,
+   "b1_ha_balanced_error": 20,
+   "b3_cells": 10,
+   "cells": 20
+  },
+  "l3reg_gt10k": {
+   "ha_scored": 40,
+   "b1_cluster_f1": 20,
+   "b1_luay_norm_exact": 20,
+   "b1_ha_balanced_error": 20,
+   "b3_cells": 10,
+   "cells": 20
+  }
+ },
+ "problems": [],
+ "sources": {
+  "l2reg_gt5k": {
+   "landed_csv": "results/rl/l2reg_n200_gt5k_v1_per_network.csv",
+   "sha256": "7e7cb16c5a63a0c14e8854023657df4ccbb3d3047937af9bbc701baf41b9c658"
+  },
+  "l2reg_gt10k": {
+   "landed_csv": "results/rl/l2reg_n200_gt10k_v1_per_network.csv",
+   "sha256": "95e6beead00c82b0c6e6603ed08370037e63e72424859bec0b71bce2ef283883"
+  },
+  "l3reg_gt5k": {
+   "landed_csv": "results/rl/l3reg_n200_gt5k_v1_per_network.csv",
+   "sha256": "a6a63ed7f27a03d927a9f5c1ceb4609c4fcf7d27b83c19357abea1a5ba2b441e"
+  },
+  "l3reg_gt10k": {
+   "landed_csv": "results/rl/l3reg_n200_gt10k_v1_per_network.csv",
+   "sha256": "6ed0a54efb3199884556550323b19ad082fc293c8e3667b74765f8a9db1c9474"
+  }
+ }
+}

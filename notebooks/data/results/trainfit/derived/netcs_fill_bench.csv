@@ -1,0 +1,69 @@
+dataset,cell,phase,rep,arm,stratum,n,level,ils,method,map_moved,cluster_f1,luay_norm_exact,ha_balanced_error,ha_fpr,ha_fnr,status
+netcs_fill,netcs_L1_n200_rep43_netcs_ils0.25,netcs_L1_n200,43,netcs_ils0.25,L1 ILS 0.25,203,1,0.25,GNN,,0.794737,0.379487,0.666667,0.5,0.833333,ok
+netcs_fill,netcs_L1_n200_rep43_netcs_ils0.25,netcs_L1_n200,43,netcs_ils0.25,L1 ILS 0.25,203,1,0.25,GNN MAP [z+tc],2,0.805263,0.369231,0.666667,0.5,0.833333,ok
+netcs_fill,netcs_L1_n200_rep43_netcs_ils0.25,netcs_L1_n200,43,netcs_ils0.25,L1 ILS 0.25,203,1,0.25,BROOQS,,,,,,,error: rc=1
+netcs_fill,netcs_L1_n200_rep43_netcs_ils0.25,netcs_L1_n200,43,netcs_ils0.25,L1 ILS 0.25,203,1,0.25,NetCS,,0.896725,0.316832,0.416667,0,0.833333,ok
+netcs_fill,netcs_L1_n200_rep49_netcs_ils0.5,netcs_L1_n200,49,netcs_ils0.5,L1 ILS 0.5,203,1,0.5,GNN,,0.84131,0.380488,0.791667,0.75,0.833333,ok
+netcs_fill,netcs_L1_n200_rep49_netcs_ils0.5,netcs_L1_n200,49,netcs_ils0.5,L1 ILS 0.5,203,1,0.5,GNN MAP [z+tc],4,0.863636,0.367647,0.791667,0.75,0.833333,ok
+netcs_fill,netcs_L1_n200_rep49_netcs_ils0.5,netcs_L1_n200,49,netcs_ils0.5,L1 ILS 0.5,203,1,0.5,BROOQS,,0.904177,0.336493,0.166667,0.166667,0.166667,ok
+netcs_fill,netcs_L1_n200_rep49_netcs_ils0.5,netcs_L1_n200,49,netcs_ils0.5,L1 ILS 0.5,203,1,0.5,NetCS,,0.906404,0.330144,0.0833333,0,0.166667,ok
+netcs_fill,netcs_L1_n50_rep1207_netcs_ils2.0,netcs_L1_n50,1207,netcs_ils2.0,L1 ILS 2.0,50,1,2,GNN,,0.72549,0.508772,0.675,0.6,0.75,ok
+netcs_fill,netcs_L1_n50_rep1207_netcs_ils2.0,netcs_L1_n50,1207,netcs_ils2.0,L1 ILS 2.0,50,1,2,GNN MAP [z+tc],1,0.705882,0.508772,0.675,0.6,0.75,ok
+netcs_fill,netcs_L1_n50_rep1207_netcs_ils2.0,netcs_L1_n50,1207,netcs_ils2.0,L1 ILS 2.0,50,1,2,BROOQS,,0.848485,0.5,0.291667,0.333333,0.25,ok
+netcs_fill,netcs_L1_n50_rep1207_netcs_ils2.0,netcs_L1_n50,1207,netcs_ils2.0,L1 ILS 2.0,50,1,2,NetCS,,0.836735,0.482143,0.513889,0.777778,0.25,ok
+netcs_fill,netcs_L1_n50_rep1549_netcs_ils0.25,netcs_L1_n50,1549,netcs_ils0.25,L1 ILS 0.25,50,1,0.25,GNN,,0.577778,0.64,1,1,1,ok
+netcs_fill,netcs_L1_n50_rep1549_netcs_ils0.25,netcs_L1_n50,1549,netcs_ils0.25,L1 ILS 0.25,50,1,0.25,GNN MAP [z+tc],1,0.615385,0.6,1,1,1,ok
+netcs_fill,netcs_L1_n50_rep1549_netcs_ils0.25,netcs_L1_n50,1549,netcs_ils0.25,L1 ILS 0.25,50,1,0.25,BROOQS,,0.845361,0.584906,0.65,0.8,0.5,ok
+netcs_fill,netcs_L1_n50_rep1549_netcs_ils0.25,netcs_L1_n50,1549,netcs_ils0.25,L1 ILS 0.25,50,1,0.25,NetCS,,0.833333,0.568627,,,1,ok
+netcs_fill,netcs_L1_n50_rep1708_netcs_ils0.25,netcs_L1_n50,1708,netcs_ils0.25,L1 ILS 0.25,50,1,0.25,GNN,,0.734694,0.758621,1,1,1,ok
+netcs_fill,netcs_L1_n50_rep1708_netcs_ils0.25,netcs_L1_n50,1708,netcs_ils0.25,L1 ILS 0.25,50,1,0.25,GNN MAP [z+tc],2,0.795918,0.706897,1,1,1,ok
+netcs_fill,netcs_L1_n50_rep1708_netcs_ils0.25,netcs_L1_n50,1708,netcs_ils0.25,L1 ILS 0.25,50,1,0.25,BROOQS,,0.909091,0.413793,0.166667,0,0.333333,ok
+netcs_fill,netcs_L1_n50_rep1708_netcs_ils0.25,netcs_L1_n50,1708,netcs_ils0.25,L1 ILS 0.25,50,1,0.25,NetCS,,0.909091,0.413793,0.166667,0,0.333333,ok
+netcs_fill,netcs_L1_n50_rep1708_netcs_ils0.5,netcs_L1_n50,1708,netcs_ils0.5,L1 ILS 0.5,50,1,0.5,GNN,,0.843137,0.516667,0.816667,0.8,0.833333,ok
+netcs_fill,netcs_L1_n50_rep1708_netcs_ils0.5,netcs_L1_n50,1708,netcs_ils0.5,L1 ILS 0.5,50,1,0.5,GNN MAP [z+tc],2,0.843137,0.516667,0.816667,0.8,0.833333,ok
+netcs_fill,netcs_L1_n50_rep1708_netcs_ils0.5,netcs_L1_n50,1708,netcs_ils0.5,L1 ILS 0.5,50,1,0.5,BROOQS,,0.888889,0.413793,0.166667,0,0.333333,ok
+netcs_fill,netcs_L1_n50_rep1708_netcs_ils0.5,netcs_L1_n50,1708,netcs_ils0.5,L1 ILS 0.5,50,1,0.5,NetCS,,0.888889,0.413793,0.166667,0,0.333333,ok
+netcs_fill,netcs_L1_n50_rep1724_netcs_ils0.25,netcs_L1_n50,1724,netcs_ils0.25,L1 ILS 0.25,50,1,0.25,GNN,,0.717391,0.469388,1,1,1,ok
+netcs_fill,netcs_L1_n50_rep1724_netcs_ils0.25,netcs_L1_n50,1724,netcs_ils0.25,L1 ILS 0.25,50,1,0.25,GNN MAP [z+tc],1,0.717391,0.469388,1,1,1,ok
+netcs_fill,netcs_L1_n50_rep1724_netcs_ils0.25,netcs_L1_n50,1724,netcs_ils0.25,L1 ILS 0.25,50,1,0.25,BROOQS,,0.747475,0.6,0.333333,0.666667,0,ok
+netcs_fill,netcs_L1_n50_rep1724_netcs_ils0.25,netcs_L1_n50,1724,netcs_ils0.25,L1 ILS 0.25,50,1,0.25,NetCS,,0.75,0.568627,0,0,0,ok
+netcs_fill,netcs_L1_n50_rep1768_netcs_ils0.5,netcs_L1_n50,1768,netcs_ils0.5,L1 ILS 0.5,51,1,0.5,GNN,,0.834951,0.517241,0.314286,0.2,0.428571,ok
+netcs_fill,netcs_L1_n50_rep1768_netcs_ils0.5,netcs_L1_n50,1768,netcs_ils0.5,L1 ILS 0.5,51,1,0.5,GNN MAP [z+tc],1,0.834951,0.517241,0.314286,0.2,0.428571,ok
+netcs_fill,netcs_L1_n50_rep1768_netcs_ils0.5,netcs_L1_n50,1768,netcs_ils0.5,L1 ILS 0.5,51,1,0.5,BROOQS,,0.882353,0.45614,0.214286,0,0.428571,ok
+netcs_fill,netcs_L1_n50_rep1768_netcs_ils0.5,netcs_L1_n50,1768,netcs_ils0.5,L1 ILS 0.5,51,1,0.5,NetCS,,0.882353,0.45614,0.214286,0,0.428571,ok
+netcs_fill,netcs_L2_n100_rep10105_netcs_ils0.25,netcs_L2_n100,10105,netcs_ils0.25,L2 ILS 0.25,101,2,0.25,GNN,,0.793651,0.373737,0.166667,0.333333,0,ok
+netcs_fill,netcs_L2_n100_rep10105_netcs_ils0.25,netcs_L2_n100,10105,netcs_ils0.25,L2 ILS 0.25,101,2,0.25,GNN MAP [z+tc],0,0.793651,0.373737,0.166667,0.333333,0,ok
+netcs_fill,netcs_L2_n100_rep10105_netcs_ils0.25,netcs_L2_n100,10105,netcs_ils0.25,L2 ILS 0.25,101,2,0.25,BROOQS,,0.847291,0.373832,1,1,1,ok
+netcs_fill,netcs_L2_n100_rep10105_netcs_ils0.25,netcs_L2_n100,10105,netcs_ils0.25,L2 ILS 0.25,101,2,0.25,NetCS,,0.874372,0.342857,0.483333,0.966667,0,ok
+netcs_fill,netcs_L2_n100_rep10230_netcs_ils0.5,netcs_L2_n100,10230,netcs_ils0.5,L2 ILS 0.5,101,2,0.5,GNN,,0.805825,0.477477,0.690476,0.666667,0.714286,ok
+netcs_fill,netcs_L2_n100_rep10230_netcs_ils0.5,netcs_L2_n100,10230,netcs_ils0.5,L2 ILS 0.5,101,2,0.5,GNN MAP [z+tc],4,0.815534,0.432432,0.690476,0.666667,0.714286,ok
+netcs_fill,netcs_L2_n100_rep10230_netcs_ils0.5,netcs_L2_n100,10230,netcs_ils0.5,L2 ILS 0.5,101,2,0.5,BROOQS,,0.858537,0.5,0.142857,0.142857,0.142857,ok
+netcs_fill,netcs_L2_n100_rep10230_netcs_ils0.5,netcs_L2_n100,10230,netcs_ils0.5,L2 ILS 0.5,101,2,0.5,NetCS,,0.852941,0.490909,0.0714286,0,0.142857,ok
+netcs_fill,netcs_L2_n100_rep10344_netcs_ils2.0,netcs_L2_n100,10344,netcs_ils2.0,L2 ILS 2.0,102,2,2,GNN,,0.903846,0.283186,0.25,0.25,0.25,ok
+netcs_fill,netcs_L2_n100_rep10344_netcs_ils2.0,netcs_L2_n100,10344,netcs_ils2.0,L2 ILS 2.0,102,2,2,GNN MAP [z+tc],2,0.913462,0.238938,0.25,0.25,0.25,ok
+netcs_fill,netcs_L2_n100_rep10344_netcs_ils2.0,netcs_L2_n100,10344,netcs_ils2.0,L2 ILS 2.0,102,2,2,BROOQS,,0.888889,0.238938,0,0,0,ok
+netcs_fill,netcs_L2_n100_rep10344_netcs_ils2.0,netcs_L2_n100,10344,netcs_ils2.0,L2 ILS 2.0,102,2,2,NetCS,,0.894231,0.238938,0,0,0,ok
+netcs_fill,netcs_L2_n50_rep01_netcs_ils0.25,netcs_L2_n50,1,netcs_ils0.25,L2 ILS 0.25,52,2,0.25,GNN,,0.705882,0.655172,0.466667,0.333333,0.6,ok
+netcs_fill,netcs_L2_n50_rep01_netcs_ils0.25,netcs_L2_n50,1,netcs_ils0.25,L2 ILS 0.25,52,2,0.25,GNN MAP [z+tc],0,0.705882,0.655172,0.466667,0.333333,0.6,ok
+netcs_fill,netcs_L2_n50_rep01_netcs_ils0.25,netcs_L2_n50,1,netcs_ils0.25,L2 ILS 0.25,52,2,0.25,BROOQS,,0.685714,0.465517,1,1,1,ok
+netcs_fill,netcs_L2_n50_rep01_netcs_ils0.25,netcs_L2_n50,1,netcs_ils0.25,L2 ILS 0.25,52,2,0.25,NetCS,,0.679612,0.446429,0.878261,0.956522,0.8,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils0.25,netcs_L2_n50,1074,netcs_ils0.25,L2 ILS 0.25,51,2,0.25,GNN,,0.534653,0.766667,1,1,1,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils0.25,netcs_L2_n50,1074,netcs_ils0.25,L2 ILS 0.25,51,2,0.25,GNN MAP [z+tc],0,0.534653,0.766667,1,1,1,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils0.25,netcs_L2_n50,1074,netcs_ils0.25,L2 ILS 0.25,51,2,0.25,BROOQS,,0.660194,0.758065,0.761905,0.666667,0.857143,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils0.25,netcs_L2_n50,1074,netcs_ils0.25,L2 ILS 0.25,51,2,0.25,NetCS,,0.54902,0.775862,0.587302,0.888889,0.285714,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils0.5,netcs_L2_n50,1074,netcs_ils0.5,L2 ILS 0.5,51,2,0.5,GNN,,0.803738,0.460317,0.380952,0.333333,0.428571,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils0.5,netcs_L2_n50,1074,netcs_ils0.5,L2 ILS 0.5,51,2,0.5,GNN MAP [z+tc],1,0.803738,0.460317,0.380952,0.333333,0.428571,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils0.5,netcs_L2_n50,1074,netcs_ils0.5,L2 ILS 0.5,51,2,0.5,BROOQS,,0.838095,0.55,0.285714,0,0.571429,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils0.5,netcs_L2_n50,1074,netcs_ils0.5,L2 ILS 0.5,51,2,0.5,NetCS,,0.815534,0.568966,0.428571,0,0.857143,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils1.0,netcs_L2_n50,1074,netcs_ils1.0,L2 ILS 1.0,51,2,1,GNN,,0.777778,0.492308,0.142857,0,0.285714,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils1.0,netcs_L2_n50,1074,netcs_ils1.0,L2 ILS 1.0,51,2,1,GNN MAP [z+tc],3,0.814815,0.461538,0.142857,0,0.285714,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils1.0,netcs_L2_n50,1074,netcs_ils1.0,L2 ILS 1.0,51,2,1,BROOQS,,0.830189,0.47619,0.314286,0.2,0.428571,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils1.0,netcs_L2_n50,1074,netcs_ils1.0,L2 ILS 1.0,51,2,1,NetCS,,0.764706,0.525424,0.678571,0.5,0.857143,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils2.0,netcs_L2_n50,1074,netcs_ils2.0,L2 ILS 2.0,51,2,2,GNN,,0.851852,0.5,0.0714286,0,0.142857,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils2.0,netcs_L2_n50,1074,netcs_ils2.0,L2 ILS 2.0,51,2,2,GNN MAP [z+tc],0,0.851852,0.5,0.0714286,0,0.142857,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils2.0,netcs_L2_n50,1074,netcs_ils2.0,L2 ILS 2.0,51,2,2,BROOQS,,0.730769,0.571429,0.588509,0.891304,0.285714,ok
+netcs_fill,netcs_L2_n50_rep1074_netcs_ils2.0,netcs_L2_n50,1074,netcs_ils2.0,L2 ILS 2.0,51,2,2,NetCS,,0.764706,0.576271,0.761905,0.666667,0.857143,ok
+netcs_fill,netcs_L2_n50_rep1434_netcs_ils2.0,netcs_L2_n50,1434,netcs_ils2.0,L2 ILS 2.0,50,2,2,GNN,,0.903846,0.295082,0.325,0.25,0.4,ok
+netcs_fill,netcs_L2_n50_rep1434_netcs_ils2.0,netcs_L2_n50,1434,netcs_ils2.0,L2 ILS 2.0,50,2,2,GNN MAP [z+tc],0,0.903846,0.295082,0.325,0.25,0.4,ok
+netcs_fill,netcs_L2_n50_rep1434_netcs_ils2.0,netcs_L2_n50,1434,netcs_ils2.0,L2 ILS 2.0,50,2,2,BROOQS,,0.901961,0.327586,0.3,0,0.6,ok
+netcs_fill,netcs_L2_n50_rep1434_netcs_ils2.0,netcs_L2_n50,1434,netcs_ils2.0,L2 ILS 2.0,50,2,2,NetCS,,0.901961,0.327586,0.3,0,0.6,ok

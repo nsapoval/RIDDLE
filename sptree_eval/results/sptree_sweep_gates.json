@@ -1,0 +1,44 @@
+{
+ "built": "2026-10-31T09:49:08-0400",
+ "vote_ks": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "min_votes": 3,
+ "have": {
+  "10k ASTRAL-IV": 50,
+  "10k RIDDLE": 550,
+  "10k RIDDLE sweep": 50,
+  "1k ASTRAL-IV": 50,
+  "1k RIDDLE": 550,
+  "1k RIDDLE sweep": 50,
+  "5k ASTRAL-IV": 50,
+  "5k RIDDLE": 550,
+  "5k RIDDLE sweep": 50
+ },
+ "gates": {
+  "W1": {
+   "ok": true,
+   "n": 0,
+   "first": []
+  },
+  "W2": {
+   "ok": true,
+   "n": 0,
+   "first": []
+  },
+  "W3": {
+   "ok": true,
+   "n": 0,
+   "first": []
+  },
+  "W4": {
+   "ok": true,
+   "n": 0,
+   "first": []
+  }
+ }
+}

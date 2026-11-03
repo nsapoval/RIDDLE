@@ -1,0 +1,131 @@
+{
+ "package": "alisim_gt_v2",
+ "built": "2026-09-08 11:56:45",
+ "built_from": {
+  "repo": "/home/ns58/net-opt",
+  "commit": "dae7d3899f745b78e35229516ad758f3be4a644e",
+  "describe": "mroe testing"
+ },
+ "phases": [
+  "y25",
+  "y50",
+  "x75",
+  "b75"
+ ],
+ "splits": {
+  "y25": {
+   "train": 700,
+   "val": 800
+  },
+  "y50": {
+   "train": 700,
+   "val": 800
+  },
+  "x75": {
+   "train": 700,
+   "val": 800
+  },
+  "b75": {
+   "train": 70,
+   "val": 80
+  }
+ },
+ "n_cells": 2800,
+ "n_cells_requested": 2220,
+ "n_loci_per_cell": 1000,
+ "default_bp": 1000,
+ "model": {
+  "branch_scale": 0.018,
+  "kappa": 2.0,
+  "base_freqs": "0.3,0.2,0.2,0.3",
+  "gamma_shape": 1.0,
+  "gamma_cats": 4,
+  "indel_ins": 0.03,
+  "indel_del": 0.03,
+  "indel_size": "POW{1.7/100}",
+  "outgroup_alpha": 0.5,
+  "inference_model": "HKY+F+G4",
+  "fast": true,
+  "keep_ident": true,
+  "theta": 0.036,
+  "sim_model": "HKY{2}+F{0.3,0.2,0.2,0.3}+G4{1}"
+ },
+ "vendored": [
+  "arms.py",
+  "simulate/outgroup.py",
+  "simulate/phylip.py",
+  "simulate/seqsim.py"
+ ],
+ "seed_check": [
+  {
+   "phase": "y25",
+   "cell_key": "n25_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 500,
+   "master_seed": 20260908,
+   "seed_alisim": 159528933,
+   "seed_iqtree": 295833153
+  },
+  {
+   "phase": "y25",
+   "cell_key": "n25_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 1000,
+   "master_seed": 20260908,
+   "seed_alisim": 183746830,
+   "seed_iqtree": 945177164
+  },
+  {
+   "phase": "y50",
+   "cell_key": "n50_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 500,
+   "master_seed": 20260908,
+   "seed_alisim": 1926465345,
+   "seed_iqtree": 339612928
+  },
+  {
+   "phase": "y50",
+   "cell_key": "n50_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 1000,
+   "master_seed": 20260908,
+   "seed_alisim": 1178585728,
+   "seed_iqtree": 301684412
+  },
+  {
+   "phase": "x75",
+   "cell_key": "n75_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 500,
+   "master_seed": 20260901,
+   "seed_alisim": 1836635323,
+   "seed_iqtree": 1569140759
+  },
+  {
+   "phase": "x75",
+   "cell_key": "n75_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 1000,
+   "master_seed": 20260901,
+   "seed_alisim": 536947663,
+   "seed_iqtree": 106151650
+  },
+  {
+   "phase": "b75",
+   "cell_key": "n75_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 500,
+   "master_seed": 20260829,
+   "seed_alisim": 2043246195,
+   "seed_iqtree": 1585660631
+  },
+  {
+   "phase": "b75",
+   "cell_key": "n75_rep0_r0_cu0.25_gU0.25-0.5_mid",
+   "bp": 1000,
+   "master_seed": 20260829,
+   "seed_alisim": 1913484635,
+   "seed_iqtree": 1665244473
+  }
+ ],
+ "cost_cpu_hours": {
+  "y25": 80.3,
+  "y50": 251.2,
+  "x75": 198.5,
+  "b75": 9.9
+ }
+}

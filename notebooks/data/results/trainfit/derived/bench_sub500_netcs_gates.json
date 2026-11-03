@@ -1,0 +1,22 @@
+{
+ "variant": "z+tc",
+ "thr": 6.0,
+ "rho": 2,
+ "stats": {
+  "netcs_sub500_d0": {
+   "ha_scored": 2400,
+   "b1_cluster_f1": 1200,
+   "b1_luay_norm_exact": 1200,
+   "b1_ha_balanced_error": 1200,
+   "b3_cells": 198,
+   "cells": 1200
+  }
+ },
+ "problems": [],
+ "sources": {
+  "netcs_sub500_d0": {
+   "landed_csv": "subsample_eval/results/netcs_sub500.csv",
+   "sha256": "53e50893f740d680378d69e7231c393dab9588acf19c7e2eb3ee668bee1e3d35"
+  }
+ }
+}

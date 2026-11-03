@@ -1,0 +1,6 @@
+[deps]
+CodecZlib = "944b1d66-785c-5afd-91f1-9de20f533193"
+JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+PhyloCoalSimulations = "53f7b83a-06b5-4910-9a21-1896bf762ade"
+PhyloNetworks = "33ad39ac-ed31-50eb-9b15-43d0656eaa72"
+StableRNGs = "860ef19b-820b-49d6-a774-d7a799459cd3"

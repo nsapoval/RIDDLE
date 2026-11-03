@@ -1,0 +1,30 @@
+{
+ "built": "2026-10-21T19:11:03-0500",
+ "family": "l3reg",
+ "conds": [
+  "p0.90_c24"
+ ],
+ "rows": 60,
+ "by_cond_method_status": {
+  "p0.90_c24|BROOQS|ok": 20,
+  "p0.90_c24|NetCS|error: rc=-11": 1,
+  "p0.90_c24|NetCS|ok": 11,
+  "p0.90_c24|NetCS|out_not_rootable": 8,
+  "p0.90_c24|ours/l2mix_pair/selF1 [relaxed L3]|ok": 20
+ },
+ "hybrid_ancestry": {
+  "networks": 59,
+  "agree": 59
+ },
+ "luay": {
+  "measured": 141,
+  "failed": 0
+ },
+ "stats": {
+  "control_tobs": 20,
+  "optional_fixed_not_run": 40
+ },
+ "gaps": [],
+ "problems": [],
+ "seconds": 2.5
+}
